@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Wed Apr 27 12:53:11 2022
+| Date             : Tue May 17 20:55:37 2022
 | Host             : DESKTOP-SOJGS7H running 64-bit major release  (build 9200)
 | Command          : report_power -file CSSTE_power_routed.rpt -pb CSSTE_power_summary_routed.pb -rpx CSSTE_power_routed.rpx
 | Design           : CSSTE
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+--------------+
-| Total On-Chip Power (W)  | 28.244       |
-| Design Power Budget (W)  | Unspecified* |
-| Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 27.746       |
-| Device Static (W)        | 0.498        |
-| Effective TJA (C/W)      | 1.9          |
-| Max Ambient (C)          | 45.6         |
-| Junction Temperature (C) | 79.4         |
-| Confidence Level         | Low          |
-| Setting File             | ---          |
-| Simulation Activity File | ---          |
-| Design Nets Matched      | NA           |
-+--------------------------+--------------+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 41.715 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                     |
+| Power Budget Margin (W)  | NA                               |
+| Dynamic (W)              | 40.566                           |
+| Device Static (W)        | 1.149                            |
+| Effective TJA (C/W)      | 1.9                              |
+| Max Ambient (C)          | 19.7                             |
+| Junction Temperature (C) | 105.3                            |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,19 +52,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic              |     6.910 |     7436 |       --- |             --- |
-|   LUT as Logic           |     6.370 |     3820 |    101400 |            3.77 |
-|   CARRY4                 |     0.325 |      101 |     25350 |            0.40 |
-|   F7/F8 Muxes            |     0.089 |      886 |    101400 |            0.87 |
-|   Register               |     0.085 |     1671 |    202800 |            0.82 |
-|   LUT as Distributed RAM |     0.021 |      768 |     35000 |            2.19 |
-|   BUFG                   |     0.020 |        6 |        32 |           18.75 |
-|   Others                 |     0.000 |       33 |       --- |             --- |
-| Signals                  |    13.894 |     5137 |       --- |             --- |
-| Block RAM                |     0.119 |        1 |       325 |            0.31 |
-| I/O                      |     6.822 |       44 |       400 |           11.00 |
-| Static Power             |     0.498 |          |           |                 |
-| Total                    |    28.244 |          |           |                 |
+| Slice Logic              |     9.394 |     7247 |       --- |             --- |
+|   LUT as Logic           |     8.540 |     3442 |    101400 |            3.39 |
+|   CARRY4                 |     0.345 |       97 |     25350 |            0.38 |
+|   F7/F8 Muxes            |     0.244 |      845 |    101400 |            0.83 |
+|   Register               |     0.189 |     1909 |    202800 |            0.94 |
+|   LUT as Distributed RAM |     0.043 |      768 |     35000 |            2.19 |
+|   BUFG                   |     0.033 |        6 |        32 |           18.75 |
+|   Others                 |     0.000 |       38 |       --- |             --- |
+| Signals                  |    18.659 |     4937 |       --- |             --- |
+| Block RAM                |     0.110 |        1 |       325 |            0.31 |
+| I/O                      |    12.402 |       44 |       400 |           11.00 |
+| Static Power             |     1.149 |          |           |                 |
+| Total                    |    41.715 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,16 +74,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |    21.384 |      21.002 |      0.382 |
-| Vccaux    |       1.800 |     0.280 |       0.245 |      0.035 |
-| Vcco33    |       3.300 |     1.894 |       1.893 |      0.001 |
+| Vccint    |       1.000 |    29.199 |      28.242 |      0.957 |
+| Vccaux    |       1.800 |     0.515 |       0.450 |      0.065 |
+| Vcco33    |       3.300 |     3.473 |       3.472 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.011 |       0.010 |      0.001 |
 | Vcco15    |       1.500 |     0.020 |       0.019 |      0.001 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.021 |       0.010 |      0.011 |
+| Vccbram   |       1.000 |     0.042 |       0.010 |      0.031 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -142,17 +142,24 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| CSSTE                                          |    27.746 |
-|   U1                                           |     2.164 |
-|     ctrl_unit                                  |     0.889 |
-|     datapath_unit                              |     1.268 |
-|       cpu_alu                                  |     0.361 |
-|       cpu_regfile                              |     0.597 |
-|   U10                                          |     1.756 |
-|   U11                                          |    14.661 |
-|     vga_controller                             |     2.307 |
-|     vga_debugger                               |    11.688 |
-|     vga_display                                |     0.666 |
+| CSSTE                                          |    40.566 |
+|   U1                                           |     2.764 |
+|     Excute                                     |     0.066 |
+|       alu_ex                                   |     0.066 |
+|     Instruction_Decoder                        |     0.669 |
+|       ctrl_unit                                |     0.004 |
+|       reg_file                                 |     0.665 |
+|     Instruction_Fetch                          |     0.670 |
+|     ex_reg_mem                                 |     0.379 |
+|     id_reg_ex                                  |     0.418 |
+|     if_reg_id                                  |     0.431 |
+|     mem_reg_wb                                 |     0.130 |
+|     write_back                                 |     0.001 |
+|   U10                                          |     1.562 |
+|   U11                                          |    21.398 |
+|     vga_controller                             |     8.413 |
+|     vga_debugger                               |    10.427 |
+|     vga_display                                |     2.558 |
 |       display_data_reg_0_63_0_2                |    <0.001 |
 |       display_data_reg_0_63_3_5                |    <0.001 |
 |       display_data_reg_0_63_6_6                |    <0.001 |
@@ -181,7 +188,7 @@ Table of Contents
 |       display_data_reg_128_191_3_5             |    <0.001 |
 |       display_data_reg_128_191_6_6             |    <0.001 |
 |       display_data_reg_128_191_7_7             |     0.000 |
-|       display_data_reg_1344_1407_0_2           |    <0.001 |
+|       display_data_reg_1344_1407_0_2           |     0.001 |
 |       display_data_reg_1344_1407_3_5           |    <0.001 |
 |       display_data_reg_1344_1407_6_6           |    <0.001 |
 |       display_data_reg_1344_1407_7_7           |     0.000 |
@@ -217,7 +224,7 @@ Table of Contents
 |       display_data_reg_1856_1919_3_5           |    <0.001 |
 |       display_data_reg_1856_1919_6_6           |    <0.001 |
 |       display_data_reg_1856_1919_7_7           |     0.000 |
-|       display_data_reg_1920_1983_0_2           |    <0.001 |
+|       display_data_reg_1920_1983_0_2           |     0.001 |
 |       display_data_reg_1920_1983_3_5           |    <0.001 |
 |       display_data_reg_1920_1983_6_6           |    <0.001 |
 |       display_data_reg_1920_1983_7_7           |     0.000 |
@@ -353,7 +360,7 @@ Table of Contents
 |       display_data_reg_3840_3903_3_5           |    <0.001 |
 |       display_data_reg_3840_3903_6_6           |    <0.001 |
 |       display_data_reg_3840_3903_7_7           |     0.000 |
-|       display_data_reg_384_447_0_2             |    <0.001 |
+|       display_data_reg_384_447_0_2             |     0.001 |
 |       display_data_reg_384_447_3_5             |    <0.001 |
 |       display_data_reg_384_447_6_6             |    <0.001 |
 |       display_data_reg_384_447_7_7             |     0.000 |
@@ -409,44 +416,44 @@ Table of Contents
 |       display_data_reg_960_1023_3_5            |    <0.001 |
 |       display_data_reg_960_1023_6_6            |    <0.001 |
 |       display_data_reg_960_1023_7_7            |     0.000 |
-|   U2                                           |     0.645 |
-|     U0                                         |     0.645 |
-|       synth_options.dist_mem_inst              |     0.645 |
-|         gen_rom.rom_inst                       |     0.645 |
-|   U3                                           |     0.224 |
-|     RAM_B                                      |     0.224 |
-|       U0                                       |     0.224 |
-|         inst_blk_mem_gen                       |     0.224 |
-|           gnbram.gnativebmg.native_blk_mem_gen |     0.224 |
-|             valid.cstr                         |     0.224 |
-|               ramloop[0].ram.r                 |     0.224 |
-|                 prim_init.ram                  |     0.224 |
-|   U4                                           |     0.127 |
-|   U5                                           |     0.266 |
-|   U6                                           |     0.468 |
-|     inst                                       |     0.468 |
-|       M2                                       |     0.150 |
-|       SM1                                      |     0.318 |
-|         HTS0                                   |     0.033 |
-|           MSEG                                 |     0.033 |
-|         HTS1                                   |     0.053 |
-|           MSEG                                 |     0.053 |
-|         HTS2                                   |     0.034 |
-|           MSEG                                 |     0.034 |
-|         HTS3                                   |     0.034 |
-|           MSEG                                 |     0.034 |
-|         HTS4                                   |     0.032 |
+|   U2                                           |     0.478 |
+|     U0                                         |     0.478 |
+|       synth_options.dist_mem_inst              |     0.478 |
+|         gen_rom.rom_inst                       |     0.478 |
+|   U3                                           |     0.110 |
+|     RAM_B                                      |     0.110 |
+|       U0                                       |     0.110 |
+|         inst_blk_mem_gen                       |     0.110 |
+|           gnbram.gnativebmg.native_blk_mem_gen |     0.110 |
+|             valid.cstr                         |     0.110 |
+|               ramloop[0].ram.r                 |     0.110 |
+|                 prim_init.ram                  |     0.110 |
+|   U4                                           |     0.005 |
+|   U5                                           |     0.296 |
+|   U6                                           |     0.721 |
+|     inst                                       |     0.721 |
+|       M2                                       |     0.398 |
+|       SM1                                      |     0.323 |
+|         HTS0                                   |     0.022 |
+|           MSEG                                 |     0.022 |
+|         HTS1                                   |     0.031 |
+|           MSEG                                 |     0.031 |
+|         HTS2                                   |     0.032 |
 |           MSEG                                 |     0.032 |
-|         HTS5                                   |     0.028 |
-|           MSEG                                 |     0.028 |
-|         HTS6                                   |     0.042 |
-|           MSEG                                 |     0.042 |
-|         HTS7                                   |     0.061 |
-|           MSEG                                 |     0.061 |
-|   U7                                           |     0.056 |
-|     LED_P2S                                    |     0.056 |
-|   U8                                           |     0.199 |
-|   U9                                           |     0.108 |
+|         HTS3                                   |     0.031 |
+|           MSEG                                 |     0.031 |
+|         HTS4                                   |     0.033 |
+|           MSEG                                 |     0.033 |
+|         HTS5                                   |     0.055 |
+|           MSEG                                 |     0.055 |
+|         HTS6                                   |     0.064 |
+|           MSEG                                 |     0.064 |
+|         HTS7                                   |     0.055 |
+|           MSEG                                 |     0.055 |
+|   U7                                           |     0.128 |
+|     LED_P2S                                    |     0.128 |
+|   U8                                           |     0.417 |
+|   U9                                           |     0.110 |
 +------------------------------------------------+-----------+
 
 

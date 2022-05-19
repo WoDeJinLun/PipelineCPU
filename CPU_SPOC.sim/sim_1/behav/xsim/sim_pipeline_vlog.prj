@@ -1,0 +1,23 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../CPU_SPOC.srcs/sources_1/imports/new/ALU.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Ex_reg_Mem.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/ID_reg_Ex.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/IF_reg_ID.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Mem_reg_WB.v" \
+"../../../../CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Ex.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_ID.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_IF.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Mem.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_WB.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/new/RegFile.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/new/ctrl_unit.v" \
+"../../../../CPU_SPOC.srcs/sources_1/imports/new/immGen.v" \
+"../../../../CPU_SPOC.srcs/sim_1/new/sim_pipeline.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

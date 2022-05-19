@@ -16,7 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7k160tffg676-2L
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,6 +31,7 @@ set_property ip_cache_permissions {read write} [current_project]
 add_files {{C:/Users/86173/Documents/subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（学生版）/OExp02-IP2SOC/I_mem.coe}}
 add_files C:/Users/86173/Documents/code/vivado/CPU_SPOC/testextend.coe
 add_files {{C:/Users/86173/Documents/subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（老师版）/OExp02-IP2SOC/I_mem.coe}}
+add_files C:/Users/86173/Documents/code/vivado/CPU_SPOC/I_mem.coe
 read_mem {
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/vga_debugger.mem
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/font_8x16.mem
@@ -39,23 +39,30 @@ read_mem {
 read_verilog -library xil_defaultlib {
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ALU.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Counter_x.v
-  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/DataPath.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Ex_reg_Mem.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/Hex2Ascii.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/ID_reg_Ex.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/IF_reg_ID.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/MIO_BUS.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Mem_reg_WB.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Multi_8CH32.v
-  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/Mux_2to1_32bit.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Ex.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_ID.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_IF.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Mem.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_WB.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/RAM_B.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/RegFile.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/SAnti_jitter.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/SPIO.v
-  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/VGA.v
-  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/VgaController.v
-  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/VgaDebugger.v
-  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/VgaDisplay.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaController.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/clk_div.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl_unit.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/immGen.v
-  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/scpu.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v
 }
 read_ip -quiet C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/SSeg7_Dev_0.xci

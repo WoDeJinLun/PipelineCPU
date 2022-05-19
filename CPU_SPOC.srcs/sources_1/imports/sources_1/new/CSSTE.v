@@ -66,21 +66,37 @@ module CSSTE(
   wire [15:0] U7_LED_out;
   wire [1023:0] Reg_value;
   wire [31:0] mepc;
-  SCPU U1
-       (.ALU_out(Addr_out),
-        .Data_in(Data_in),
-        .Data_out(Data_out),
-        .MIO_ready(1'b0),
-        .MemRW(MemRW),
-        .PC_out(PC_out),
-        .clk(Clk_CPU),
-        .inst_in(Inst_in),
-        .rst(rst),
-        .out_io(BTN_y[0]),
-        .Reg_value(Reg_value),
-        .mepc(mepc));
+//  SCPU U1
+//       (.ALU_out(Addr_out),
+//        .Data_in(Data_in),
+//        .Data_out(Data_out),
+//        .MIO_ready(1'b0),
+//        .MemRW(MemRW),
+//        .PC_out(PC_out),
+//        .clk(Clk_CPU),
+//        .inst_in(Inst_in),
+//        .rst(rst),
+//        .out_io(BTN_y[0]),
+//        .Reg_value(Reg_value),
+//        .mepc(mepc));
+wire MemRW_Mem,MemRW_EX;
+wire [31:0] PC_out_EX,PC_out_ID,PC_out_IF,inst_ID,Data_out_WB,Rs1_val,Rs2_val;
+wire [4:0] rd_ex,rs1_ex,rs2_ex,rd_mem,rd_wb;
+wire [31:0] imm_ex,PC_out_idex,PC_out_exmem,PC_out_memwb;
+wire reg_wen_ex,reg_wen_mem,reg_wen_wb,is_imm_ex,mem_wen_ex,mem_wen_mem,is_branch_ex,is_jal_ex,
+is_jal_mem,is_jalr_ex,is_jalr_mem,is_lui_ex;
+wire [3:0] alu_ctrl_ex;
+Pipeline_CPU U1 (.Data_in(Data_in),.rst(rst),.clk(Clk_CPU),.inst_IF(Inst_in),.PC_out_EX(PC_out_EX),.PC_out_ID(PC_out_ID),
+.inst_ID(inst_ID),.PC_out_IF(PC_out_IF),.Addr_out(Addr_out),.Data_out(Data_out),
+.Data_out_WB(Data_out_WB),.MemRW_Mem(MemRW_Mem),.MemRW_EX(MemRW_EX),.Reg_value(Reg_value),
+.Rs1_val(Rs1_val),.Rs2_val(Rs2_val),.rd_ex(rd_ex),.rs1_ex(rs1_ex),.rs2_ex(rs2_ex),.rd_mem(rd_mem),
+.rd_wb(rd_wb),.imm_ex(imm_ex),.PC_out_idex(PC_out_idex),.PC_out_exmem(PC_out_exmem),
+.PC_out_memwb(PC_out_memwb),.reg_wen_ex(reg_wen_ex),.reg_wen_mem(reg_wen_mem),.reg_wen_wb(reg_wen_wb),
+.is_imm_ex(is_imm_ex),.mem_wen_ex(mem_wen_ex),.mem_wen_mem(mem_wen_mem),
+.is_branch_ex(is_branch_ex),.is_jal_ex(is_jal_ex),
+.is_jal_mem(is_jal_mem),.is_jalr_ex(is_jalr_ex),.is_jalr_mem(is_jalr_mem),.is_lui_ex(is_lui_ex));
   ROM_D_0 U2
-       (.a(PC_out[11:2]),
+       (.a(PC_out_IF[11:2]),
         .spo(Inst_in));
   RAM_B U3
        (.addra(ram_addr),
@@ -105,7 +121,7 @@ module CSSTE(
         .counter_we(U4_counter_we),
         .data_ram_we(U4_data_ram_we),
         .led_out(U7_LED_out),
-        .mem_w(MemRW),
+        .mem_w(MemRW_Mem),
         .ram_addr(ram_addr),
         .ram_data_in(ram_data_in),
         .ram_data_out(RAM_B_0_douta),
@@ -121,13 +137,13 @@ module CSSTE(
         .LE_out(Multi_8CH32_0_LE_out),
         .Test(SW_OK[7:5]),
         .clk(~Clk_CPU),
-        .data1({2'b0,PC_out[31:2]}),
+        .data1({2'b0,PC_out_IF[31:2]}),
         .data2(Inst_in),
         .data3(U10_counter_out),
         .data4(Addr_out),
         .data5(Data_out),
         .data6(Data_in),
-        .data7(PC_out),
+        .data7(PC_out_IF),
         .point_in({clkdiv[31:0],clkdiv[31:0]}),
         .point_out(Multi_8CH32_0_point_out),
         .rst(rst));
@@ -188,23 +204,32 @@ module CSSTE(
                 .counter_we(U4_counter_we),
                 .rst(rst));
   VGA U11
-       (.alu_res(Addr_out),
+       (
         .clk_100m(clk_100mhz),
         .clk_25m(clkdiv[1]),
-        .dmem_addr(Addr_out),
-        .dmem_i_data(ram_data_in),
-        .dmem_o_data(RAM_B_0_douta),
-        .Reg_value(Reg_value),
-        .mepc(mepc),
+        .PC_IF(PC_out_IF),
+        .inst_ID(inst_ID),
+        .inst_IF(Inst_in),
+        .PC_ID(PC_out_ID),
+        .PC_Ex(PC_out_EX),
+        .MemRW_Ex(MemRW_EX),
+        .MemRW_Mem(MemRW_Mem),
+        .Addr_out(Addr_out),
+        .Data_out(Data_out),
+        .Data_out_WB(Data_out_WB),
         .hs(HSYNC),
-        .inst(Inst_in),
-        .mem_wen(MemRW),
-        .pc(PC_out),
         .rst(rst),
         .vga_b(Blue),
         .vga_g(Green),
         .vga_r(Red),
-        .vs(VSYNC));
+        .vs(VSYNC),
+        .Reg_value(Reg_value),.Rs1_val(Rs1_val),.Rs2_val(Rs2_val),
+        .rd_ex(rd_ex),.rs1_ex(rs1_ex),.rs2_ex(rs2_ex),.rd_mem(rd_mem),
+        .rd_wb(rd_wb),.imm_ex(imm_ex),.PC_out_idex(PC_out_idex),.PC_out_exmem(PC_out_exmem),
+        .PC_out_memwb(PC_out_memwb),.reg_wen_ex(reg_wen_ex),.reg_wen_mem(reg_wen_mem),.reg_wen_wb(reg_wen_wb),
+        .is_imm_ex(is_imm_ex),.mem_wen_ex(mem_wen_ex),.mem_wen_mem(mem_wen_mem),
+        .is_branch_ex(is_branch_ex),.is_jal_ex(is_jal_ex),
+        .is_jal_mem(is_jal_mem),.is_jalr_ex(is_jalr_ex),.is_jalr_mem(is_jalr_mem),.is_lui_ex(is_lui_ex));
 
 endmodule
 
