@@ -5,7 +5,7 @@ module Pipeline_ID(
   input [4:0]Rd_addr_ID,
   input [31:0]Wt_data_ID,
   input [31:0]Inst_in_ID,
-  output [31:0]Rd_addr_out_ID,
+  output [4:0]Rd_addr_out_ID,
   output [31:0]Rs1_out_ID,
   output [31:0]Rs2_out_ID,
   output [31:0]Imm_out_ID,
@@ -22,6 +22,7 @@ module Pipeline_ID(
   );
 //  wire RegWrite;
   wire [2:0] ImmSel;
+  wire [31:0] Rs1_out_ID_temp,Rs2_out_ID_temp;
   SCPU_ctrl_more ctrl_unit (.inst_field(Inst_in_ID),.MIO_ready(1'b1),.ecall(),.mret(),.ill_instr(),
   .ImmSel(ImmSel),.ALUSrc_B(ALUSrc_B_ID),.MemtoReg(MemtoReg_ID),.Jump(Jump_ID)
   ,.Branch(Branch_ID),.BranchN(BranchN_ID),.RegWrite(RegWrite_out_ID),.MemRW(MemRW_ID),
@@ -32,8 +33,9 @@ module Pipeline_ID(
   RegFile reg_file (.clk(clk_ID),.rst(rst_ID),.RegWrite(RegWrite_in_ID),.restore(1'b0),
   .Rs1_addr(Inst_in_ID[19:15]),.Rs2_addr(Inst_in_ID[24:20]),.Wt_addr(Rd_addr_ID),
   .Wt_data(Wt_data_ID),.restore_data(1024'h0),
-  .Rs1_data(Rs1_out_ID),.Rs2_data(Rs2_out_ID),.Reg_value(Reg_value));
-
+  .Rs1_data(Rs1_out_ID_temp),.Rs2_data(Rs2_out_ID_temp),.Reg_value(Reg_value));
+   assign Rs1_out_ID = (rs1_ex==Rd_addr_ID)?Wt_data_ID:Rs1_out_ID_temp;
+   assign Rs2_out_ID = (rs2_ex==Rd_addr_ID)?Wt_data_ID:Rs2_out_ID_temp;
     assign rs1_ex = Inst_in_ID[19:15];
     assign rs2_ex = Inst_in_ID[24:20];
 endmodule

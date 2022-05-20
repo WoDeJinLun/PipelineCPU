@@ -16,6 +16,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7k160tffg676-2L
 
 set_param project.singleFileAddWarning.threshold 0
@@ -28,9 +29,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files {{C:/Users/86173/Documents/subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（学生版）/OExp02-IP2SOC/I_mem.coe}}
 add_files C:/Users/86173/Documents/code/vivado/CPU_SPOC/testextend.coe
-add_files {{C:/Users/86173/Documents/subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（老师版）/OExp02-IP2SOC/I_mem.coe}}
 add_files C:/Users/86173/Documents/code/vivado/CPU_SPOC/I_mem.coe
 read_mem {
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/vga_debugger.mem
@@ -61,7 +60,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/clk_div.v
-  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl_unit.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/immGen.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v
 }

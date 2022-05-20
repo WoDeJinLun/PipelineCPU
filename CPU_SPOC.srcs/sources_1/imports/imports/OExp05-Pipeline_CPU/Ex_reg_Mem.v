@@ -3,6 +3,7 @@ module Ex_reg_Mem(
   input clk_EXMem,
   input rst_EXMem,
   input en_EXMem,
+  input [31:0]inst_in_exmem,
   input [31:0]PC_in_EXMem,
   input [31:0]PC4_in_EXMem,
   input [4:0]Rd_addr_EXMem,
@@ -16,6 +17,7 @@ module Ex_reg_Mem(
   input [1:0]MemtoReg_in_EXMem,
   input [31:0] imm_in_EXMem,
   input RegWrite_in_EXMem,
+  output reg [31:0]inst_out_exmem,
   output reg [31:0]PC_out_EXMem,
   output reg [31:0]PC4_out_EXMem,
   output reg [4:0]Rd_addr_out_EXMem,
@@ -25,7 +27,7 @@ module Ex_reg_Mem(
   output reg Branch_out_EXMem,
   output reg BranchN_out_EXMem,
   output reg MemRW_out_EXMem,
-  output reg Jump_out_EXMem,
+  output reg [1:0]Jump_out_EXMem,
   output reg [1:0]MemtoReg_out_EXMem,
   output reg RegWrite_out_EXMem,
   output reg [31:0] imm_out_EXMem
@@ -45,6 +47,8 @@ module Ex_reg_Mem(
       Jump_out_EXMem <= 0;
       MemtoReg_out_EXMem <= 0;
       RegWrite_out_EXMem <= 0;
+      inst_out_exmem <= 0;
+      imm_out_EXMem <= 0;
     end else if(en_EXMem==0)begin
       PC_out_EXMem <= PC_out_EXMem;
       PC4_out_EXMem <= PC4_out_EXMem;
@@ -58,7 +62,11 @@ module Ex_reg_Mem(
       Jump_out_EXMem <= Jump_out_EXMem;
       MemtoReg_out_EXMem <= MemtoReg_out_EXMem;
       RegWrite_out_EXMem <= RegWrite_out_EXMem;
+      inst_out_exmem <= inst_out_exmem;
+      imm_out_EXMem <= imm_out_EXMem;
     end else begin 
+      imm_out_EXMem <= imm_in_EXMem;
+      inst_out_exmem <= inst_in_exmem;
       PC_out_EXMem <= PC_in_EXMem;
       PC4_out_EXMem <= PC4_in_EXMem;
       Rd_addr_out_EXMem <= Rd_addr_EXMem;

@@ -80,7 +80,8 @@ module CSSTE(
 //        .Reg_value(Reg_value),
 //        .mepc(mepc));
 wire MemRW_Mem,MemRW_EX;
-wire [31:0] PC_out_EX,PC_out_ID,PC_out_IF,inst_ID,Data_out_WB,Rs1_val,Rs2_val;
+wire [31:0] PC_out_EX,PC_out_ID,PC_out_IF,inst_ID,Data_out_WB,Rs1_val,Rs2_val,inst_idex,inst_exmem,
+inst_memwb;
 wire [4:0] rd_ex,rs1_ex,rs2_ex,rd_mem,rd_wb;
 wire [31:0] imm_ex,PC_out_idex,PC_out_exmem,PC_out_memwb;
 wire reg_wen_ex,reg_wen_mem,reg_wen_wb,is_imm_ex,mem_wen_ex,mem_wen_mem,is_branch_ex,is_jal_ex,
@@ -93,7 +94,8 @@ Pipeline_CPU U1 (.Data_in(Data_in),.rst(rst),.clk(Clk_CPU),.inst_IF(Inst_in),.PC
 .rd_wb(rd_wb),.imm_ex(imm_ex),.PC_out_idex(PC_out_idex),.PC_out_exmem(PC_out_exmem),
 .PC_out_memwb(PC_out_memwb),.reg_wen_ex(reg_wen_ex),.reg_wen_mem(reg_wen_mem),.reg_wen_wb(reg_wen_wb),
 .is_imm_ex(is_imm_ex),.mem_wen_ex(mem_wen_ex),.mem_wen_mem(mem_wen_mem),
-.is_branch_ex(is_branch_ex),.is_jal_ex(is_jal_ex),
+.is_branch_ex(is_branch_ex),.is_jal_ex(is_jal_ex),.inst_idex(inst_idex),.inst_exmem(inst_exmem),
+.inst_memwb(inst_memwb),
 .is_jal_mem(is_jal_mem),.is_jalr_ex(is_jalr_ex),.is_jalr_mem(is_jalr_mem),.is_lui_ex(is_lui_ex));
   ROM_D_0 U2
        (.a(PC_out_IF[11:2]),
@@ -211,7 +213,7 @@ Pipeline_CPU U1 (.Data_in(Data_in),.rst(rst),.clk(Clk_CPU),.inst_IF(Inst_in),.PC
         .inst_ID(inst_ID),
         .inst_IF(Inst_in),
         .PC_ID(PC_out_ID),
-        .PC_Ex(PC_out_EX),
+      //  .PC_Ex(PC_out_EX),
         .MemRW_Ex(MemRW_EX),
         .MemRW_Mem(MemRW_Mem),
         .Addr_out(Addr_out),
@@ -229,7 +231,9 @@ Pipeline_CPU U1 (.Data_in(Data_in),.rst(rst),.clk(Clk_CPU),.inst_IF(Inst_in),.PC
         .PC_out_memwb(PC_out_memwb),.reg_wen_ex(reg_wen_ex),.reg_wen_mem(reg_wen_mem),.reg_wen_wb(reg_wen_wb),
         .is_imm_ex(is_imm_ex),.mem_wen_ex(mem_wen_ex),.mem_wen_mem(mem_wen_mem),
         .is_branch_ex(is_branch_ex),.is_jal_ex(is_jal_ex),
-        .is_jal_mem(is_jal_mem),.is_jalr_ex(is_jalr_ex),.is_jalr_mem(is_jalr_mem),.is_lui_ex(is_lui_ex));
+        .is_jal_mem(is_jal_mem),.is_jalr_ex(is_jalr_ex),
+        .is_jalr_mem(is_jalr_mem),.is_lui_ex(is_lui_ex)
+        ,.inst_idex(inst_idex),.inst_exmem(inst_exmem),.inst_memwb(inst_memwb));
 
 endmodule
 

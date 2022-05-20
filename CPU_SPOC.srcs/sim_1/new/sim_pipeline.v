@@ -24,7 +24,7 @@ module sim_pipeline;
 reg [31:0] Data_in,Inst_in;
 reg rst,clk;
 wire [31:0] PC_out_IF,PC_out_EX,PC_out_ID,PC_out_idex,PC_out_exmem,PC_out_memwb,inst_ID,Addr_out,Data_out,
-Data_out_WB,Rs1_val,Rs2_val,imm_ex;
+Data_out_WB,Rs1_val,Rs2_val,imm_ex,inst_idex,inst_exmem,inst_memwb;
 wire MemRW_Mem,MemRW_EX,reg_wen_mem,reg_wen_ex,
 reg_wen_wb,is_imm_ex,mem_wen_ex,mem_wen_mem,is_branch_ex,is_jal_ex,
 is_jal_mem,is_jalr_ex,is_jalr_mem,is_lui_ex;
@@ -37,10 +37,12 @@ Pipeline_CPU U1 (.Data_in(Data_in),.rst(rst),.clk(clk),.inst_IF(Inst_in),.PC_out
 .rd_wb(rd_wb),.imm_ex(imm_ex),.PC_out_idex(PC_out_idex),.PC_out_exmem(PC_out_exmem),
 .PC_out_memwb(PC_out_memwb),.reg_wen_ex(reg_wen_ex),.reg_wen_mem(reg_wen_mem),.reg_wen_wb(reg_wen_wb),
 .is_imm_ex(is_imm_ex),.mem_wen_ex(mem_wen_ex),.mem_wen_mem(mem_wen_mem),
-.is_branch_ex(is_branch_ex),.is_jal_ex(is_jal_ex),
+.is_branch_ex(is_branch_ex),.is_jal_ex(is_jal_ex),.inst_idex(inst_idex),.inst_exmem(inst_exmem),
+.inst_memwb(inst_memwb),
 .is_jal_mem(is_jal_mem),.is_jalr_ex(is_jalr_ex),.is_jalr_mem(is_jalr_mem),.is_lui_ex(is_lui_ex));
 
 initial begin
+    Data_in = 32'h3f3f3f3f;
     clk = 0;
     rst = 1;
     #100;

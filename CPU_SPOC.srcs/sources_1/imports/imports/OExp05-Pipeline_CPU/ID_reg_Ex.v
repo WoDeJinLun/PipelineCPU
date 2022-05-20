@@ -4,19 +4,20 @@ module ID_reg_Ex(
   input en_IDEX,
   input [31:0]PC_in_IDEX,
   input [4:0]Rd_addr_IDEX,
-  input [31:0]Rs1_in_IDEx,
+  input [31:0]Rs1_in_IDEx,rs1_addr_in_idex,rs2_addr_in_idex,
   input [31:0]Rs2_in_IDEX,
   input [31:0]Imm_in_IDEX,
   input ALUSrc_B_in_IDEX,
-  input [2:0]ALU_control_in_IDEX,
+  input [3:0]ALU_control_in_IDEX,
   input Branch_in_IDEX,
   input BranchN_in_IDEX,
   input MemRW_in_IDEX,
   input [1:0]Jump_in_IDEX,
   input [1:0]MemtoReg_in_IDEX,
   input RegWrite_in_IDEX,
+  input [31:0] inst_in_idex,
   output reg [31:0]PC_out_IDEX,
-  output reg [4:0]Rd_addr_out_IDEX,
+  output reg [4:0]Rd_addr_out_IDEX,rs1_addr_out_idex,rs2_addr_out_idex,
   output reg [31:0]Rs1_out_IDEX,
   output reg [31:0]Rs2_out_IDEX,
   output reg [31:0]Imm_out_IDEX,
@@ -27,7 +28,8 @@ module ID_reg_Ex(
   output reg MemRW_out_IDEX,
   output reg [1:0]Jump_out_IDEX,
   output reg [1:0]MemtoReg_out_IDEX,
-  output reg RegWrite_out_IDEX
+  output reg RegWrite_out_IDEX,
+  output reg [31:0] inst_out_idex
   );
 
 
@@ -46,6 +48,9 @@ module ID_reg_Ex(
       Jump_out_IDEX <= 0;
       MemtoReg_out_IDEX <= 0;
       RegWrite_out_IDEX <= 0;
+      inst_out_idex <= 0;
+      rs1_addr_out_idex <= 0;
+      rs2_addr_out_idex <= 0;
     end else if(en_IDEX==0)begin
       PC_out_IDEX <= PC_out_IDEX;
       Rd_addr_out_IDEX <= Rd_addr_out_IDEX;
@@ -60,6 +65,9 @@ module ID_reg_Ex(
       Jump_out_IDEX <= Jump_out_IDEX;
       MemtoReg_out_IDEX <= MemRW_out_IDEX;
       RegWrite_out_IDEX <= RegWrite_out_IDEX;
+      inst_out_idex <= inst_out_idex;
+      rs1_addr_out_idex <= rs1_addr_out_idex;
+      rs2_addr_out_idex <= rs2_addr_out_idex;
     end else begin
       PC_out_IDEX <= PC_in_IDEX;
       Rd_addr_out_IDEX <= Rd_addr_IDEX;
@@ -74,6 +82,9 @@ module ID_reg_Ex(
       Jump_out_IDEX <= Jump_in_IDEX;
       MemtoReg_out_IDEX <= MemtoReg_in_IDEX;
       RegWrite_out_IDEX <= RegWrite_in_IDEX;
+      inst_out_idex <= inst_in_idex;
+      rs1_addr_out_idex <= rs1_addr_in_idex;
+      rs2_addr_out_idex <= rs2_addr_in_idex;
     end
   end
 endmodule

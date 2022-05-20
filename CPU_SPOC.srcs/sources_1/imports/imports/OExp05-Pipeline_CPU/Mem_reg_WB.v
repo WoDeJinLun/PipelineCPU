@@ -10,6 +10,7 @@ module Mem_reg_WB(
   input [31:0]Rs2_in_MemWB,
   input [1:0]MemtoReg_in_MemWB,
   input RegWrite_in_MemWB,
+  input [31:0] inst_in_memwb,
   output reg [31:0]PC4_out_MemWB,
   output reg [4:0]Rd_addr_out_MemWB,
   output reg [31:0]ALU_out_MemWB,
@@ -17,7 +18,9 @@ module Mem_reg_WB(
   output reg [1:0]MemtoReg_out_MemWB,
   output reg RegWrite_out_MemWB,
   output reg [31:0] imm_out_MemWB,
-  output reg [31:0] Rs2_out_MemWB);
+  output reg [31:0] Rs2_out_MemWB,
+  output reg [31:0] inst_out_memwb
+  );
   always@(posedge clk_MemWB or posedge rst_MemWB)begin
     if(rst_MemWB == 1)begin
       PC4_out_MemWB <= 0;
@@ -28,6 +31,7 @@ module Mem_reg_WB(
       RegWrite_out_MemWB <= 0;
       imm_out_MemWB <= 0;
       Rs2_out_MemWB <= 0;
+      inst_out_memwb <= 0;
     end else if(en_MemWB == 0)begin
       PC4_out_MemWB <= PC4_out_MemWB;
       Rd_addr_out_MemWB <= Rd_addr_out_MemWB;
@@ -37,6 +41,7 @@ module Mem_reg_WB(
       RegWrite_out_MemWB <= RegWrite_out_MemWB;
       imm_out_MemWB <= imm_out_MemWB;
       Rs2_out_MemWB <= Rs2_out_MemWB;
+      inst_out_memwb <= inst_out_memwb;
     end else begin
       PC4_out_MemWB <= PC4_in_MemWB;
       Rd_addr_out_MemWB <= Rd_addr_MemWB;
@@ -46,6 +51,7 @@ module Mem_reg_WB(
       RegWrite_out_MemWB <= RegWrite_in_MemWB;
       imm_out_MemWB <= imm_in_MemWB;
       Rs2_out_MemWB <= Rs2_in_MemWB;
+      inst_out_memwb <= inst_in_memwb;
     end
   end
 endmodule

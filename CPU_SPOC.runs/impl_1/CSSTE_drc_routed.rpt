@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Tue May 17 20:55:32 2022
+| Date         : Fri May 20 19:13:20 2022
 | Host         : DESKTOP-SOJGS7H running 64-bit major release  (build 9200)
 | Command      : report_drc -file CSSTE_drc_routed.rpt -pb CSSTE_drc_routed.pb -rpx CSSTE_drc_routed.rpx
 | Design       : CSSTE
@@ -61,7 +61,7 @@ Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net U1/if_reg_id/ALU_control_out_IDEX_reg[0][0] is a gated clock net sourced by a combinational pin U1/if_reg_id/ALU_Control_reg[2]_i_2/O, cell U1/if_reg_id/ALU_Control_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net U1/if_reg_id/ALU_control_out_IDEX_reg[0][0] is a gated clock net sourced by a combinational pin U1/if_reg_id/ALU_Control_reg[3]_i_2/O, cell U1/if_reg_id/ALU_Control_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
@@ -76,22 +76,22 @@ Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net U1/if_reg_id/E[0] is a gated clock net sourced by a combinational pin U1/if_reg_id/ImmSel_reg[2]_i_2/O, cell U1/if_reg_id/ImmSel_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net U1/if_reg_id/E[0] is a gated clock net sourced by a combinational pin U1/if_reg_id/Jump_reg[1]_i_2/O, cell U1/if_reg_id/Jump_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net U1/if_reg_id/MemRW_out_IDEX_reg is a gated clock net sourced by a combinational pin U1/if_reg_id/MemRW_reg_i_2/O, cell U1/if_reg_id/MemRW_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net U1/if_reg_id/Imm_out_IDEX_reg[3]_0[0] is a gated clock net sourced by a combinational pin U1/if_reg_id/ImmSel_reg[2]_i_2/O, cell U1/if_reg_id/ImmSel_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning
 Gated clock check  
-Net U1/if_reg_id/MemtoReg_out_IDEX_reg[1]_0[0] is a gated clock net sourced by a combinational pin U1/if_reg_id/MemtoReg_reg[1]_i_2/O, cell U1/if_reg_id/MemtoReg_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net U1/if_reg_id/MemRW_out_IDEX_reg is a gated clock net sourced by a combinational pin U1/if_reg_id/MemRW_reg_i_2/O, cell U1/if_reg_id/MemRW_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#8 Warning
 Gated clock check  
-Net U1/if_reg_id/RegWrite_out_IDEX_reg_0 is a gated clock net sourced by a combinational pin U1/if_reg_id/Jump_reg[0]_i_2/O, cell U1/if_reg_id/Jump_reg[0]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net U1/if_reg_id/MemtoReg_out_IDEX_reg[1]_0[0] is a gated clock net sourced by a combinational pin U1/if_reg_id/MemtoReg_reg[1]_i_2/O, cell U1/if_reg_id/MemtoReg_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 REQP-1839#1 Warning
