@@ -42,7 +42,7 @@ SCPU_ctrl_more test0 (.inst_field(inst_field),.ImmSel(ImmSel),.ALUSrc_B(ALUSrc_B
 .BranchN(BranchN),.RegWrite(RegWrite),.MemRW(MemRW),.ALU_Control(ALU_Control)); 
 
 initial begin
-inst_field = 32'h00108113;
+inst_field = 32'hFE0098E3;
 #100;
 inst_field = 32'h00100093;
 #100;

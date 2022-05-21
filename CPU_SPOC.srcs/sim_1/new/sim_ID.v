@@ -46,7 +46,7 @@ clk = 0;
 #100;
 rst = 0;
 RegWrite_in_ID = 1;
-inst_out_IFID = 32'h00100093;
+inst_out_IFID = 32'h0000B203;
 Rd_addr_out_MemWB = 3;
 Data_out_WB = 25;
 end

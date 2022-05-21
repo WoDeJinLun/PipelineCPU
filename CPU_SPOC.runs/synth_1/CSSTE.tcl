@@ -39,12 +39,14 @@ read_verilog -library xil_defaultlib {
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ALU.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Counter_x.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Ex_reg_Mem.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/HazardCheck.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/Hex2Ascii.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/ID_reg_Ex.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/IF_reg_ID.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/MIO_BUS.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Mem_reg_WB.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Multi_8CH32.v
+  C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Mux4to1_32bit.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Ex.v
   C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_ID.v

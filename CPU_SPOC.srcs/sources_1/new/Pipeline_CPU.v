@@ -41,16 +41,16 @@ output wire [31:0] inst_idex,inst_exmem,inst_memwb
     );
 wire [31:0] Rs2_out_MemWB;
 // inst fetch
-wire [31:0] PC_in_IF;
+wire [31:0] PC_in_IF,ALU_out_EX,wt_data_exmem,wt_data_idex,ALU_Forward;
 wire [1:0] PCSrc;
-wire en_IF,en_IFID;
-wire [1:0] NOP_IFID,NOP_IDEX,ForwardA,ForwardB;
+wire en_IF,en_IFID,NOP_IFID,NOP_IDEX,NOP_EXMEM;
+wire [1:0] ForwardA,ForwardB;
 Pipeline_IF Instruction_Fetch (.clk_IF(clk),.rst_IF(rst),
 .en_IF(en_IF),.PC_in_IF(PC_in_IF),.Rs2_in_IF(Rs2_out_MemWB),.PCSrc(PCSrc),.PC_out_IF(PC_out_IF));
 
 // if reg
 wire [31:0] PC_out_IFID,inst_out_IFID;
-IF_reg_ID if_reg_id (.clk_IFID(clk),.rst_IFID(rst),.en_IFID(en_IFID),.PC_in_IFID(PC_out_IF),
+IF_reg_ID if_reg_id (.clk_IFID(clk),.rst_IFID(rst),.NOP(NOP_IFID),.en_IFID(en_IFID),.PC_in_IFID(PC_out_IF),
 .inst_in_IFID(inst_IF),.PC_out_IFID(PC_out_IFID),.inst_out_IFID(inst_out_IFID));
 
 // inst decoder
@@ -59,7 +59,7 @@ wire [3:0] ALU_control_ID;
 wire [1:0] MemtoReg_ID,Jump_ID;
 wire [4:0] Rd_addr_out_ID,Rd_addr_ID,Rd_addr_out_MemWB,rs1_ex_id,rs2_ex_id;
 wire [31:0] Rs1_out_ID,Rs2_out_ID,Imm_out_ID;
-wire [31:0] PC_out_IDEX,Rs1_out_IDEX,Rs2_out_IDEX,Imm_out_IDEX;
+wire [31:0] PC_out_IDEX,Rs1_out_IDEX,Rs2_out_IDEX,Imm_out_IDEX,ALU_out_EXMem;
 Pipeline_ID Instruction_Decoder (.clk_ID(clk),.rst_ID(rst),
 .RegWrite_in_ID(RegWrite_in_ID),.Rd_addr_ID(Rd_addr_out_MemWB),
 .Wt_data_ID(Data_out_WB),.Inst_in_ID(inst_out_IFID),
@@ -67,7 +67,8 @@ Pipeline_ID Instruction_Decoder (.clk_ID(clk),.rst_ID(rst),
 .Rs2_out_ID(Rs2_out_ID),.Imm_out_ID(Imm_out_ID),.ALUSrc_B_ID(ALUSrc_B_ID),
 .ALU_control_ID(ALU_control_ID),.Branch_ID(Branch_ID),.BranchN_ID(BranchN_ID),
 .MemRW_ID(MemRW_ID),.Jump_ID(Jump_ID),.MemtoReg_ID(MemtoReg_ID),
-.RegWrite_out_ID(RegWrite_out_ID),.Reg_value(Reg_value),.rs1_ex(rs1_ex_id),.rs2_ex(rs2_ex_id));
+.RegWrite_out_ID(RegWrite_out_ID),.Reg_value(Reg_value),.rs1_ex(rs1_ex_id),.rs2_ex(rs2_ex_id),
+.ForwardA(ForwardA),.ForwardB(ForwardB),.wt_data_idex(wt_data_idex),.wt_data_exmem(wt_data_exmem));
 assign alu_ctrl_ex = ALU_control_ID;
 // ID_reg_Ex
 wire [4:0] Rd_addr_out_IDEX;
@@ -75,12 +76,12 @@ wire [1:0] MemtoReg_out_IDEX,Jump_out_IDEX;
 wire ALUSrc_B_out_IDEX,Branch_out_IDEX,BranchN_out_IDEX,MemRW_out_IDEX,RegWrite_out_IDEX;
 wire [3:0] ALU_control_out_IDEX;
 
-ID_reg_Ex id_reg_ex (.clk_IDEX(clk),.rst_IDEX(rst),.en_IDEX(1'b1),
+ID_reg_Ex id_reg_ex (.clk_IDEX(clk),.rst_IDEX(rst),.NOP(NOP_IDEX),.en_IDEX(1'b1),
 .PC_in_IDEX(PC_out_IFID),.Rd_addr_IDEX(Rd_addr_out_ID),.rs1_addr_in_idex(rs1_ex_id),
 .rs2_addr_in_idex(rs2_ex_id),.rs1_addr_out_idex(rs1_ex),.rs2_addr_out_idex(rs2_ex),
 .Rs1_in_IDEx(Rs1_out_ID),.Rs2_in_IDEX(Rs2_out_ID),.Imm_in_IDEX(Imm_out_ID),
 .ALUSrc_B_in_IDEX(ALUSrc_B_ID),.ALU_control_in_IDEX(ALU_control_ID),
-.Branch_in_IDEX(Branch_ID),.BranchN_in_IDEX(BranchN_ID),
+.Branch_in_IDEX(Branch_ID),.BranchN_in_IDEX(BranchN_ID),.ALU_EX(ALU_out_EX),
 .MemRW_in_IDEX(MemRW_ID),.inst_in_idex(inst_out_IFID),
 .Jump_in_IDEX(Jump_ID),.MemtoReg_in_IDEX(MemtoReg_ID),.RegWrite_in_IDEX(RegWrite_out_ID),
 .PC_out_IDEX(PC_out_IDEX),.Rd_addr_out_IDEX(Rd_addr_out_IDEX),
@@ -89,7 +90,7 @@ ID_reg_Ex id_reg_ex (.clk_IDEX(clk),.rst_IDEX(rst),.en_IDEX(1'b1),
 .ALU_control_out_IDEX(ALU_control_out_IDEX),.Branch_out_IDEX(Branch_out_IDEX),
 .BranchN_out_IDEX(BranchN_out_IDEX),.MemRW_out_IDEX(MemRW_out_IDEX),
 .Jump_out_IDEX(Jump_out_IDEX),.MemtoReg_out_IDEX(MemtoReg_out_IDEX),.inst_out_idex(inst_idex),
-.RegWrite_out_IDEX(RegWrite_out_IDEX));
+.RegWrite_out_IDEX(RegWrite_out_IDEX),.wt_data_idex(wt_data_idex));
 assign rd_ex = Rd_addr_out_IDEX;
 assign Rs1_val = Rs1_out_IDEX;
 assign Rs2_val = Rs2_out_IDEX;
@@ -103,7 +104,7 @@ assign is_jal_ex = (Jump_out_IDEX==2'b1);
 assign is_jalr_ex = (Jump_out_IDEX==2'b10);
 assign is_lui_ex = (MemtoReg_out_IDEX==2'b11);
 // EXCUTE
-wire [31:0] PC4_out_EX,ALU_out_EX,Rs2_out_EX;
+wire [31:0] PC4_out_EX,Rs2_out_EX;
 wire zero_out_EX;
 
 Pipeline_Ex Excute(.PC_in_EX(PC_out_IDEX),.Rs1_in_EX(Rs1_out_IDEX),
@@ -119,12 +120,12 @@ wire zero_out_EXMem,Branch_out_EXMem,BranchN_out_EXMem,MemRW_out_EXMem,RegWrite_
 wire [1:0] Jump_out_EXMem;
 wire [1:0] MemtoReg_out_EXMem;
 wire [4:0] Rd_addr_out_EXMem;
-wire [31:0] PC_out_EXMem,PC4_out_EXMem,ALU_out_EXMem,Rs2_out_EXMem,imm_out_EXMem;
+wire [31:0] PC_out_EXMem,PC4_out_EXMem,Rs2_out_EXMem,imm_out_EXMem;
 
 Ex_reg_Mem ex_reg_mem (.clk_EXMem(clk),.rst_EXMem(rst),.inst_in_exmem(inst_idex),
-.en_EXMem(1'b1),.PC_in_EXMem(PC_out_EX),.PC4_in_EXMem(PC4_out_EX),
-.Rd_addr_EXMem(Rd_addr_out_IDEX),.zero_in_EXMem(zero_out_EX),
-.ALU_in_EXMem(ALU_out_EX),.Rs2_in_EXMem(Rs2_out_EX),.imm_in_EXMem(Imm_out_IDEX),
+.en_EXMem(1'b1),.PC_in_EXMem(PC_out_EX),.PC4_in_EXMem(PC4_out_EX),.NOP(NOP_EXMEM),
+.Rd_addr_EXMem(Rd_addr_out_IDEX),.zero_in_EXMem(zero_out_EX),.DMem_data_in_EXMem(Data_in),
+.ALU_in_EXMem(ALU_out_EX),.Rs2_in_EXMem(Rs2_out_IDEX),.imm_in_EXMem(Imm_out_IDEX),
 .Branch_in_EXMem(Branch_out_IDEX),.BranchN_in_EXMem(BranchN_out_IDEX),
 .MemRW_in_EXMem(MemRW_out_IDEX),.Junp_in_EXMem(Jump_out_IDEX),
 .MemtoReg_in_EXMem(MemtoReg_out_IDEX),.RegWrite_in_EXMem(RegWrite_out_IDEX),
@@ -134,7 +135,7 @@ Ex_reg_Mem ex_reg_mem (.clk_EXMem(clk),.rst_EXMem(rst),.inst_in_exmem(inst_idex)
 .Branch_out_EXMem(Branch_out_EXMem),.BranchN_out_EXMem(BranchN_out_EXMem),
 .Jump_out_EXMem(Jump_out_EXMem),.MemtoReg_out_EXMem(MemtoReg_out_EXMem),.inst_out_exmem(inst_exmem),
 .MemRW_out_EXMem(MemRW_out_EXMem),.RegWrite_out_EXMem(RegWrite_out_EXMem)
-,.imm_out_EXMem(imm_out_EXMem));
+,.imm_out_EXMem(imm_out_EXMem),.wt_data_exmem(wt_data_exmem));
 assign PC_out_exmem = PC4_out_EXMem - 32'h4;
 assign PC_in_IF = PC_out_EXMem;
 assign rd_mem = Rd_addr_out_EXMem;
@@ -181,12 +182,12 @@ assign inst_ID = inst_out_IFID;
 
 
 Stall check_hazard (
-    .rst_stall(rst),.Rs1_addr_ID(Rs1_out_ID),.Rs2_addr_ID(Rs2_out_ID),
-    .Rd_addr_out_ID0EX(Rd_addr_out_IDEX),.Rd_addr_out_EXMEM(Rd_addr_out_EXMem),
+    .rst_stall(rst),.Rs1_addr_ID(inst_out_IFID[19:15]),.Rs2_addr_ID(inst_out_IFID[24:20]),
+    .Rd_addr_out_IDEX(Rd_addr_out_IDEX),.Rd_addr_out_EXMEM(Rd_addr_out_EXMem),
     .Rd_addr_out_MEMWB(Rd_addr_out_MemWB),.RegWrite_out_IDEX(RegWrite_out_IDEX),
     .RegWrite_out_EXMEM(RegWrite_out_EXMem),
     .RegWrite_out_MEMWB(RegWrite_in_ID),.MemtoReg_IDEX(MemtoReg_out_IDEX),
-    .PCSrc(PCSrc),.en_IF(en_IF),
+    .PCSrc(PCSrc),.en_IF(en_IF),.en_IFID(en_IFID),.NOP_EXMEM(NOP_EXMEM),
     .NOP_IDEX(NOP_IDEX),.NOP_IFID(NOP_IFID),.ForwardA(ForwardA),.ForwardB(ForwardB)
 );
 endmodule

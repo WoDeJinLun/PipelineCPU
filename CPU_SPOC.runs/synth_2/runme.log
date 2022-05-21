@@ -1,0 +1,978 @@
+
+*** Running vivado
+    with args -log CSSTE.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source CSSTE.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source CSSTE.tcl -notrace
+Command: synth_design -top CSSTE -part xc7k160tffg676-2L -no_lc -no_srlextract
+Starting synth_design
+INFO: [IP_Flow 19-2162] IP 'SSeg7_Dev_0' is locked:
+* IP definition 'SSeg7_Dev (1.0)' for IP 'SSeg7_Dev_0' (customized with software release 2017.4) was not found in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 24500 
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module Hex2Ascii [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v:3]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 388.180 ; gain = 108.734
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'CSSTE' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:23]
+INFO: [Synth 8-638] synthesizing module 'Pipeline_CPU' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:23]
+INFO: [Synth 8-638] synthesizing module 'Pipeline_IF' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_IF.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Pipeline_IF' (1#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_IF.v:1]
+INFO: [Synth 8-638] synthesizing module 'IF_reg_ID' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/IF_reg_ID.v:1]
+INFO: [Synth 8-256] done synthesizing module 'IF_reg_ID' (2#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/IF_reg_ID.v:1]
+WARNING: [Synth 8-689] width (2) of port connection 'rst_IFID' does not match port width (1) of module 'IF_reg_ID' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:53]
+INFO: [Synth 8-638] synthesizing module 'Pipeline_ID' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_ID.v:1]
+INFO: [Synth 8-638] synthesizing module 'SCPU_ctrl_more' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:22]
+	Parameter _add bound to: 4'b0010 
+	Parameter _sub bound to: 4'b0110 
+	Parameter _sll bound to: 4'b1110 
+	Parameter _slt bound to: 4'b0111 
+	Parameter _sltu bound to: 4'b1001 
+	Parameter _xor bound to: 4'b1100 
+	Parameter _srl bound to: 4'b1101 
+	Parameter _sra bound to: 4'b1111 
+	Parameter _or bound to: 4'b0001 
+	Parameter _and bound to: 4'b0000 
+	Parameter _I bound to: 3'b000 
+	Parameter _S bound to: 3'b001 
+	Parameter _B bound to: 3'b010 
+	Parameter _J bound to: 3'b011 
+	Parameter _U bound to: 3'b100 
+	Parameter _Reg bound to: 0 - type: integer 
+	Parameter _Imm bound to: 1 - type: integer 
+	Parameter _Read bound to: 0 - type: integer 
+	Parameter _Write bound to: 1 - type: integer 
+	Parameter _ALU bound to: 0 - type: integer 
+	Parameter _Mem bound to: 1 - type: integer 
+	Parameter _PC bound to: 2 - type: integer 
+	Parameter _Imm_mem bound to: 3 - type: integer 
+WARNING: [Synth 8-151] case item 7'b1110011 is unreachable [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:52]
+WARNING: [Synth 8-3848] Net CPU_MIO in module/entity SCPU_ctrl_more does not have driver. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:40]
+INFO: [Synth 8-256] done synthesizing module 'SCPU_ctrl_more' (3#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:22]
+INFO: [Synth 8-638] synthesizing module 'immGen' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/immGen.v:23]
+INFO: [Synth 8-256] done synthesizing module 'immGen' (4#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/immGen.v:23]
+INFO: [Synth 8-638] synthesizing module 'RegFile' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/RegFile.v:22]
+INFO: [Synth 8-256] done synthesizing module 'RegFile' (5#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/RegFile.v:22]
+INFO: [Synth 8-638] synthesizing module 'Mux4to1_32bit' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Mux4to1_32bit.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Mux4to1_32bit' (6#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Mux4to1_32bit.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Pipeline_ID' (7#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_ID.v:1]
+INFO: [Synth 8-638] synthesizing module 'ID_reg_Ex' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/ID_reg_Ex.v:1]
+INFO: [Synth 8-256] done synthesizing module 'ID_reg_Ex' (8#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/ID_reg_Ex.v:1]
+WARNING: [Synth 8-689] width (2) of port connection 'rst_IDEX' does not match port width (1) of module 'ID_reg_Ex' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:79]
+WARNING: [Synth 8-689] width (5) of port connection 'rs1_addr_in_idex' does not match port width (32) of module 'ID_reg_Ex' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:80]
+WARNING: [Synth 8-689] width (5) of port connection 'rs2_addr_in_idex' does not match port width (32) of module 'ID_reg_Ex' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:81]
+INFO: [Synth 8-638] synthesizing module 'Pipeline_Ex' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Ex.v:1]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ALU.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ALU.v:33]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (9#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ALU.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Pipeline_Ex' (10#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Ex.v:1]
+INFO: [Synth 8-638] synthesizing module 'Ex_reg_Mem' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Ex_reg_Mem.v:2]
+INFO: [Synth 8-256] done synthesizing module 'Ex_reg_Mem' (11#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Ex_reg_Mem.v:2]
+INFO: [Synth 8-638] synthesizing module 'Pipeline_Mem' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Mem.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Pipeline_Mem' (12#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Mem.v:1]
+INFO: [Synth 8-638] synthesizing module 'Mem_reg_WB' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Mem_reg_WB.v:1]
+WARNING: [Synth 8-3848] Net wt_data_exmem in module/entity Mem_reg_WB does not have driver. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Mem_reg_WB.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Mem_reg_WB' (13#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Mem_reg_WB.v:1]
+WARNING: [Synth 8-350] instance 'mem_reg_wb' of module 'Mem_reg_WB' requires 22 connections, but only 21 given [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:155]
+INFO: [Synth 8-638] synthesizing module 'Pipeline_WB' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_WB.v:2]
+INFO: [Synth 8-256] done synthesizing module 'Pipeline_WB' (14#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_WB.v:2]
+INFO: [Synth 8-638] synthesizing module 'Stall' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/HazardCheck.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Stall' (15#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/HazardCheck.v:23]
+WARNING: [Synth 8-689] width (2) of port connection 'MemtoReg_IDEX' does not match port width (1) of module 'Stall' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:189]
+WARNING: [Synth 8-689] width (2) of port connection 'NOP_IDEX' does not match port width (1) of module 'Stall' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:191]
+WARNING: [Synth 8-689] width (2) of port connection 'NOP_IFID' does not match port width (1) of module 'Stall' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:191]
+WARNING: [Synth 8-3848] Net is_auipc_ex in module/entity Pipeline_CPU does not have driver. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:34]
+WARNING: [Synth 8-3848] Net cmp_ctrl_ex in module/entity Pipeline_CPU does not have driver. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:34]
+INFO: [Synth 8-256] done synthesizing module 'Pipeline_CPU' (16#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:23]
+WARNING: [Synth 8-350] instance 'U1' of module 'Pipeline_CPU' requires 45 connections, but only 40 given [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:90]
+INFO: [Synth 8-638] synthesizing module 'ROM_D_0' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/ROM_D_0/synth/ROM_D_0.vhd:66]
+	Parameter C_FAMILY bound to: kintex7 - type: string 
+	Parameter C_ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_DEPTH bound to: 1024 - type: integer 
+	Parameter C_HAS_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_D bound to: 0 - type: integer 
+	Parameter C_HAS_DPO bound to: 0 - type: integer 
+	Parameter C_HAS_DPRA bound to: 0 - type: integer 
+	Parameter C_HAS_I_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_SPO bound to: 1 - type: integer 
+	Parameter C_HAS_WE bound to: 0 - type: integer 
+	Parameter C_MEM_INIT_FILE bound to: ROM_D_0.mif - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_MEM_TYPE bound to: 0 - type: integer 
+	Parameter C_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_QCE_JOINED bound to: 0 - type: integer 
+	Parameter C_QUALIFY_WE bound to: 0 - type: integer 
+	Parameter C_READ_MIF bound to: 1 - type: integer 
+	Parameter C_REG_A_D_INPUTS bound to: 0 - type: integer 
+	Parameter C_REG_DPRA_INPUT bound to: 0 - type: integer 
+	Parameter C_SYNC_ENABLE bound to: 1 - type: integer 
+	Parameter C_WIDTH bound to: 32 - type: integer 
+	Parameter C_PARSER_TYPE bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dist_mem_gen_v8_0_12' declared at 'c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/ROM_D_0/hdl/dist_mem_gen_v8_0_vhsyn_rfs.vhd:3237' bound to instance 'U0' of component 'dist_mem_gen_v8_0_12' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/ROM_D_0/synth/ROM_D_0.vhd:132]
+INFO: [Synth 8-256] done synthesizing module 'ROM_D_0' (20#1) [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/ROM_D_0/synth/ROM_D_0.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'RAM_B' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/RAM_B.v:15]
+WARNING: [Synth 8-689] width (32) of port connection 'wea' does not match port width (1) of module 'RAM_B_bbox_0' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:108]
+INFO: [Synth 8-638] synthesizing module 'MIO_BUS' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/MIO_BUS.v:15]
+WARNING: [Synth 8-689] width (32) of port connection 'data_ram_we' does not match port width (1) of module 'MIO_BUS_bbox_1' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:124]
+INFO: [Synth 8-638] synthesizing module 'Multi_8CH32' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Multi_8CH32.v:15]
+INFO: [Synth 8-638] synthesizing module 'SSeg7_Dev_0' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/synth/SSeg7_Dev_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'SSeg7_Dev' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/SSeg7_Dev.v:23]
+INFO: [Synth 8-638] synthesizing module 'MUX2T1_64' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/MUX2T1_64.v:23]
+INFO: [Synth 8-256] done synthesizing module 'MUX2T1_64' (21#1) [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/MUX2T1_64.v:23]
+INFO: [Synth 8-638] synthesizing module 'P2S' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/P2S.v:23]
+	Parameter DATA_BITS bound to: 64 - type: integer 
+	Parameter DATA_COUNT_BITS bound to: 6 - type: integer 
+	Parameter S_IDLE bound to: 0 - type: integer 
+	Parameter S_TRAN bound to: 1 - type: integer 
+	Parameter S_CLKN bound to: 2 - type: integer 
+	Parameter S_DONE bound to: 3 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/P2S.v:63]
+WARNING: [Synth 8-5788] Register buffer_reg in module P2S is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/P2S.v:51]
+INFO: [Synth 8-256] done synthesizing module 'P2S' (22#1) [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/P2S.v:23]
+INFO: [Synth 8-638] synthesizing module 'HexTo8SEG' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/HexTo8SEG.v:23]
+INFO: [Synth 8-638] synthesizing module 'Hex2Seg' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/HexTo8SEG.v:43]
+INFO: [Synth 8-638] synthesizing module 'MC14495_ZJU' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/MC14495_ZJU.v:23]
+INFO: [Synth 8-638] synthesizing module 'INV' [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22577]
+INFO: [Synth 8-256] done synthesizing module 'INV' (23#1) [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22577]
+INFO: [Synth 8-638] synthesizing module 'AND4' [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:108]
+INFO: [Synth 8-256] done synthesizing module 'AND4' (24#1) [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:108]
+INFO: [Synth 8-638] synthesizing module 'OR4' [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:30939]
+INFO: [Synth 8-256] done synthesizing module 'OR4' (25#1) [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:30939]
+INFO: [Synth 8-638] synthesizing module 'AND3' [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:60]
+INFO: [Synth 8-256] done synthesizing module 'AND3' (26#1) [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:60]
+INFO: [Synth 8-638] synthesizing module 'OR3' [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:30891]
+INFO: [Synth 8-256] done synthesizing module 'OR3' (27#1) [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:30891]
+INFO: [Synth 8-638] synthesizing module 'AND2' [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:14]
+INFO: [Synth 8-256] done synthesizing module 'AND2' (28#1) [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:14]
+INFO: [Synth 8-638] synthesizing module 'OR2' [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:30845]
+INFO: [Synth 8-256] done synthesizing module 'OR2' (29#1) [I:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:30845]
+INFO: [Synth 8-256] done synthesizing module 'MC14495_ZJU' (30#1) [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/MC14495_ZJU.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Hex2Seg' (31#1) [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/HexTo8SEG.v:43]
+INFO: [Synth 8-256] done synthesizing module 'HexTo8SEG' (32#1) [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/HexTo8SEG.v:23]
+INFO: [Synth 8-638] synthesizing module 'SSeg_map' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/SSeg_map.v:23]
+INFO: [Synth 8-256] done synthesizing module 'SSeg_map' (33#1) [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/SSeg_map.v:23]
+INFO: [Synth 8-256] done synthesizing module 'SSeg7_Dev' (34#1) [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/SSeg7_Dev.v:23]
+INFO: [Synth 8-256] done synthesizing module 'SSeg7_Dev_0' (35#1) [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/SSeg7_Dev_0/synth/SSeg7_Dev_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'SPIO' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/SPIO.v:15]
+WARNING: [Synth 8-350] instance 'U7' of module 'SPIO' requires 12 connections, but only 11 given [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:166]
+INFO: [Synth 8-638] synthesizing module 'clk_div' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/clk_div.v:15]
+INFO: [Synth 8-638] synthesizing module 'SAnti_jitter' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/SAnti_jitter.v:15]
+WARNING: [Synth 8-350] instance 'U9' of module 'SAnti_jitter' requires 13 connections, but only 8 given [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:186]
+INFO: [Synth 8-638] synthesizing module 'Counter_x' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Counter_x.v:15]
+INFO: [Synth 8-638] synthesizing module 'VGA' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:2]
+INFO: [Synth 8-638] synthesizing module 'VgaController' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaController.v:1]
+	Parameter HS_1 bound to: 96 - type: integer 
+	Parameter VS_1 bound to: 2 - type: integer 
+	Parameter HS_2 bound to: 157 - type: integer 
+	Parameter VS_2 bound to: 57 - type: integer 
+	Parameter WIDTH bound to: 640 - type: integer 
+	Parameter HEIGHT bound to: 480 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'VgaController' (36#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaController.v:1]
+INFO: [Synth 8-638] synthesizing module 'VgaDisplay' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:1]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:14]
+INFO: [Synth 8-3876] $readmem data file 'C://Users//86173//Documents//code//vivado//CPU_SPOC//vga_debugger.mem' is read successfully [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:15]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:24]
+INFO: [Synth 8-3876] $readmem data file 'C://Users//86173//Documents//code//vivado//CPU_SPOC//font_8x16.mem' is read successfully [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:25]
+INFO: [Synth 8-256] done synthesizing module 'VgaDisplay' (37#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:1]
+INFO: [Synth 8-638] synthesizing module 'VgaDebugger' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v:31]
+INFO: [Synth 8-638] synthesizing module 'Hex2Ascii' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v:3]
+INFO: [Synth 8-256] done synthesizing module 'Hex2Ascii' (38#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v:3]
+INFO: [Synth 8-256] done synthesizing module 'VgaDebugger' (39#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v:31]
+INFO: [Synth 8-256] done synthesizing module 'VGA' (40#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:2]
+WARNING: [Synth 8-350] instance 'U11' of module 'VGA' requires 45 connections, but only 44 given [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:208]
+INFO: [Synth 8-256] done synthesizing module 'CSSTE' (41#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:23]
+WARNING: [Synth 8-3331] design VGA has unconnected port MemRW_Ex
+WARNING: [Synth 8-3331] design VGA has unconnected port MemRW_Mem
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[63]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[62]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[61]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[60]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[59]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[58]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[57]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[56]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[55]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[54]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[53]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[52]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[51]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[50]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[49]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[48]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[47]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[46]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[45]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[44]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[43]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[42]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[41]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[40]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[39]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[38]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[37]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[36]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[35]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[34]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[33]
+WARNING: [Synth 8-3331] design SSeg_map has unconnected port Disp_num[32]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[31]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[30]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[29]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[28]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[27]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[26]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[25]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[24]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[23]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[22]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[21]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[20]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[19]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[18]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[17]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[16]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[15]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[14]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[13]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[12]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[11]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[10]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[9]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[8]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[7]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[6]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[5]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[4]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[3]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[2]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[1]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[0]
+WARNING: [Synth 8-3331] design rom has unconnected port clk
+WARNING: [Synth 8-3331] design rom has unconnected port qspo_ce
+WARNING: [Synth 8-3331] design rom has unconnected port qspo_rst
+WARNING: [Synth 8-3331] design rom has unconnected port qspo_srst
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[31]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[30]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[29]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[28]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[27]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[26]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[25]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[24]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[23]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[22]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[21]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[20]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[19]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[18]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[17]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[16]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[15]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[14]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[13]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[12]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[11]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[10]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[9]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[8]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[7]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[6]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[5]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[4]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[3]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[2]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 455.141 ; gain = 175.695
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IfId_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_is_auipc to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_cmp_ctrl[2] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_cmp_ctrl[1] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_cmp_ctrl[0] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:ExMa_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:MaWb_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin U11:alu_ctrl_ex[3] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:208]
+WARNING: [Synth 8-3295] tying undriven pin U11:alu_ctrl_ex[2] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:208]
+WARNING: [Synth 8-3295] tying undriven pin U11:alu_ctrl_ex[1] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:208]
+WARNING: [Synth 8-3295] tying undriven pin U11:alu_ctrl_ex[0] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:208]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 455.141 ; gain = 175.695
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 320 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7k160tffg676-2L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc]
+WARNING: [Vivado 12-507] No nets matched 'U1/Rs1_out_IDEX_reg'. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc:2]
+WARNING: [Vivado 12-507] No nets matched 'U1/Rs2_out_IDEX_reg'. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc:3]
+Finished Parsing XDC File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/CSSTE_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/CSSTE_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/CSSTE_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.runs/synth_2/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.runs/synth_2/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 320 instances were transformed.
+  AND2 => LUT2: 8 instances
+  AND3 => LUT3: 88 instances
+  AND4 => LUT4: 72 instances
+  INV => LUT1: 40 instances
+  OR2 => LUT2: 56 instances
+  OR3 => LUT3: 24 instances
+  OR4 => LUT4: 32 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 816.449 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 816.449 ; gain = 537.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k160tffg676-2L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 816.449 ; gain = 537.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for U2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U6. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 816.449 ; gain = 537.004
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "ill_instr0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ill_instr" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Branch" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "BranchN" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "Jump" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "ALUSrc_B" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "MemRW" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "MemtoReg" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5544] ROM "ALU_Control" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ImmSel" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "ImmSel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "shift_count" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "v_count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5547] Trying to map ROM "fonts_data" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5546] ROM "display_wen" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'ImmSel_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:95]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUSrc_B_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'MemtoReg_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:64]
+WARNING: [Synth 8-327] inferring latch for variable 'Jump_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'Branch_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:58]
+WARNING: [Synth 8-327] inferring latch for variable 'BranchN_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'RegWrite_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:63]
+WARNING: [Synth 8-327] inferring latch for variable 'MemRW_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:62]
+WARNING: [Synth 8-327] inferring latch for variable 'ALU_Control_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ctrl.v:66]
+WARNING: [Synth 8-327] inferring latch for variable 'C_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ALU.v:31]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 816.449 ; gain = 537.004
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 6     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 51    
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 15    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   4 Input     64 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input     32 Bit        Muxes := 33    
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	  10 Input      4 Bit        Muxes := 1     
+	 416 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	  10 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 11    
+	  10 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 15    
+	  11 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 75    
+	  12 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 5     
+	 416 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Pipeline_IF 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module IF_reg_ID 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+Module SCPU_ctrl_more 
+Detailed RTL Component Info : 
++---Muxes : 
+	   8 Input      4 Bit        Muxes := 1     
+	  10 Input      4 Bit        Muxes := 1     
+	  10 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 4     
+	  10 Input      2 Bit        Muxes := 2     
+	  10 Input      1 Bit        Muxes := 15    
+	  11 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+Module RegFile 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 31    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 31    
+	   2 Input      1 Bit        Muxes := 62    
+Module Mux4to1_32bit 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module ID_reg_Ex 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	  12 Input      1 Bit        Muxes := 1     
+Module Pipeline_Ex 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Ex_reg_Mem 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Pipeline_Mem 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 1     
+Module Mem_reg_WB 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module Pipeline_WB 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module Stall 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 1     
+Module Pipeline_CPU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+Module MUX2T1_64 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+Module P2S 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     64 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 5     
+Module VgaController 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module VgaDisplay 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 1     
+Module VgaDebugger 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	 416 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	 416 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 600 (col length:100)
+BRAMs: 650 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "ctrl_unit/ImmSel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "ctrl_unit/ALUSrc_B" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "ctrl_unit/MemtoReg" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "ctrl_unit/Jump" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "ctrl_unit/MemRW" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "U11/vga_controller/v_count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5547] Trying to map ROM "p_0_out" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5546] ROM "U11/vga_debugger/display_wen" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM U11/vga_display/display_data_reg,trying to implement using LUTRAM
+WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM U11/vga_display/display_data_reg,trying to implement using LUTRAM
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/rs1_addr_out_idex_reg[0]' (FDC) to 'U1/id_reg_ex/inst_out_idex_reg[15]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[20]' (FDC) to 'U1/id_reg_ex/rs2_addr_out_idex_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/Rd_addr_out_IDEX_reg[0]' (FDC) to 'U1/id_reg_ex/inst_out_idex_reg[7]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/rs1_addr_out_idex_reg[4]' (FDC) to 'U1/id_reg_ex/inst_out_idex_reg[19]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[24]' (FDC) to 'U1/id_reg_ex/rs2_addr_out_idex_reg[4]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[8]' (FDC) to 'U1/id_reg_ex/Rd_addr_out_IDEX_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/Rd_addr_out_IDEX_reg[4]' (FDC) to 'U1/id_reg_ex/inst_out_idex_reg[11]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[16]' (FDC) to 'U1/id_reg_ex/rs1_addr_out_idex_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[21]' (FDC) to 'U1/id_reg_ex/rs2_addr_out_idex_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[9]' (FDC) to 'U1/id_reg_ex/Rd_addr_out_IDEX_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[17]' (FDC) to 'U1/id_reg_ex/rs1_addr_out_idex_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[22]' (FDC) to 'U1/id_reg_ex/rs2_addr_out_idex_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[10]' (FDC) to 'U1/id_reg_ex/Rd_addr_out_IDEX_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[18]' (FDC) to 'U1/id_reg_ex/rs1_addr_out_idex_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U1/id_reg_ex/inst_out_idex_reg[23]' (FDC) to 'U1/id_reg_ex/rs2_addr_out_idex_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U1/ex_reg_mem/Rd_addr_out_EXMem_reg[0]' (FDCE) to 'U1/ex_reg_mem/inst_out_exmem_reg[7]'
+INFO: [Synth 8-3886] merging instance 'U1/ex_reg_mem/inst_out_exmem_reg[8]' (FDCE) to 'U1/ex_reg_mem/Rd_addr_out_EXMem_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U1/ex_reg_mem/Rd_addr_out_EXMem_reg[4]' (FDCE) to 'U1/ex_reg_mem/inst_out_exmem_reg[11]'
+INFO: [Synth 8-3886] merging instance 'U1/ex_reg_mem/Rd_addr_out_EXMem_reg[3]' (FDCE) to 'U1/ex_reg_mem/inst_out_exmem_reg[10]'
+INFO: [Synth 8-3886] merging instance 'U1/ex_reg_mem/Rd_addr_out_EXMem_reg[2]' (FDCE) to 'U1/ex_reg_mem/inst_out_exmem_reg[9]'
+INFO: [Synth 8-3886] merging instance 'U1/mem_reg_wb/Rd_addr_out_MemWB_reg[0]' (FDC) to 'U1/mem_reg_wb/inst_out_memwb_reg[7]'
+INFO: [Synth 8-3886] merging instance 'U1/mem_reg_wb/inst_out_memwb_reg[8]' (FDC) to 'U1/mem_reg_wb/Rd_addr_out_MemWB_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U1/mem_reg_wb/Rd_addr_out_MemWB_reg[4]' (FDC) to 'U1/mem_reg_wb/inst_out_memwb_reg[11]'
+INFO: [Synth 8-3886] merging instance 'U1/mem_reg_wb/Rd_addr_out_MemWB_reg[3]' (FDC) to 'U1/mem_reg_wb/inst_out_memwb_reg[10]'
+INFO: [Synth 8-3886] merging instance 'U1/mem_reg_wb/Rd_addr_out_MemWB_reg[2]' (FDC) to 'U1/mem_reg_wb/inst_out_memwb_reg[9]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 816.449 ; gain = 537.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++---------------------+--------------------------------------------------------+---------------+----------------+
+|Module Name          | RTL Object                                             | Depth x Width | Implemented As | 
++---------------------+--------------------------------------------------------+---------------+----------------+
+|rom                  | rom[1023]                                              | 1024x32       | LUT            | 
+|VgaDisplay           | p_0_out                                                | 4096x8        | LUT            | 
+|dist_mem_gen_v8_0_12 | synth_options.dist_mem_inst/gen_rom.rom_inst/rom[1023] | 1024x32       | LUT            | 
+|CSSTE                | p_0_out                                                | 4096x8        | LUT            | 
++---------------------+--------------------------------------------------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+----------------------------------+-----------+----------------------+--------------------------------+
+|Module Name | RTL Object                       | Inference | Size (Depth x Width) | Primitives                     | 
++------------+----------------------------------+-----------+----------------------+--------------------------------+
+|CSSTE       | U11/vga_display/display_data_reg | Implied   | 4 K x 7              | RAM64X1D x 128  RAM64M x 128   | 
++------------+----------------------------------+-----------+----------------------+--------------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 879.125 ; gain = 599.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 885.609 ; gain = 606.164
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+----------------------------------+-----------+----------------------+--------------------------------+
+|Module Name | RTL Object                       | Inference | Size (Depth x Width) | Primitives                     | 
++------------+----------------------------------+-----------+----------------------+--------------------------------+
+|CSSTE       | U11/vga_display/display_data_reg | Implied   | 4 K x 7              | RAM64X1D x 128  RAM64M x 128   | 
++------------+----------------------------------+-----------+----------------------+--------------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 953.980 ; gain = 674.535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:00 ; elapsed = 00:01:02 . Memory (MB): peak = 953.980 ; gain = 674.535
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:00 ; elapsed = 00:01:02 . Memory (MB): peak = 953.980 ; gain = 674.535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:01:02 . Memory (MB): peak = 953.980 ; gain = 674.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 953.980 ; gain = 674.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 953.980 ; gain = 674.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 953.980 ; gain = 674.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |RAM_B         |         1|
+|2     |MIO_BUS       |         1|
+|3     |Multi_8CH32   |         1|
+|4     |SPIO          |         1|
+|5     |clk_div       |         1|
+|6     |SAnti_jitter  |         1|
+|7     |Counter_x     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------------------+------+
+|      |Cell                |Count |
++------+--------------------+------+
+|1     |Counter_x_bbox_6    |     1|
+|2     |MIO_BUS_bbox_1      |     1|
+|3     |Multi_8CH32_bbox_2  |     1|
+|4     |RAM_B_bbox_0        |     1|
+|5     |SAnti_jitter_bbox_5 |     1|
+|6     |SPIO_bbox_3         |     1|
+|7     |clk_div_bbox_4      |     1|
+|8     |AND2                |     8|
+|9     |AND3                |    88|
+|10    |AND4                |    72|
+|11    |BUFG                |     2|
+|12    |CARRY4              |    75|
+|13    |INV                 |    40|
+|14    |LUT1                |    69|
+|15    |LUT2                |   153|
+|16    |LUT3                |    91|
+|17    |LUT4                |   354|
+|18    |LUT5                |   684|
+|19    |LUT6                |  2151|
+|20    |MUXF7               |   642|
+|21    |MUXF8               |   257|
+|22    |OR2                 |    56|
+|23    |OR3                 |    24|
+|24    |OR4                 |    32|
+|25    |RAM64M              |   128|
+|26    |RAM64X1D            |   128|
+|27    |FDCE                |  1674|
+|28    |FDPE                |     4|
+|29    |FDRE                |   110|
+|30    |FDSE                |     2|
+|31    |LD                  |    48|
+|32    |IBUF                |    22|
+|33    |OBUF                |    22|
++------+--------------------+------+
+
+Report Instance Areas: 
++------+------------------------------------+---------------------------+------+
+|      |Instance                            |Module                     |Cells |
++------+------------------------------------+---------------------------+------+
+|1     |top                                 |                           |  7267|
+|2     |  U2                                |ROM_D_0                    |    20|
+|3     |    U0                              |dist_mem_gen_v8_0_12       |    20|
+|4     |      \synth_options.dist_mem_inst  |dist_mem_gen_v8_0_12_synth |    20|
+|5     |        \gen_rom.rom_inst           |rom                        |    20|
+|6     |  U6                                |SSeg7_Dev_0                |   483|
+|7     |    inst                            |SSeg7_Dev                  |   483|
+|8     |      M2                            |P2S                        |   154|
+|9     |      SM1                           |HexTo8SEG                  |   329|
+|10    |        HTS0                        |Hex2Seg                    |    41|
+|11    |          MSEG                      |MC14495_ZJU_13             |    41|
+|12    |        HTS1                        |Hex2Seg_0                  |    41|
+|13    |          MSEG                      |MC14495_ZJU_12             |    41|
+|14    |        HTS2                        |Hex2Seg_1                  |    41|
+|15    |          MSEG                      |MC14495_ZJU_11             |    41|
+|16    |        HTS3                        |Hex2Seg_2                  |    41|
+|17    |          MSEG                      |MC14495_ZJU_10             |    41|
+|18    |        HTS4                        |Hex2Seg_3                  |    41|
+|19    |          MSEG                      |MC14495_ZJU_9              |    41|
+|20    |        HTS5                        |Hex2Seg_4                  |    41|
+|21    |          MSEG                      |MC14495_ZJU_8              |    41|
+|22    |        HTS6                        |Hex2Seg_5                  |    41|
+|23    |          MSEG                      |MC14495_ZJU_7              |    41|
+|24    |        HTS7                        |Hex2Seg_6                  |    42|
+|25    |          MSEG                      |MC14495_ZJU                |    42|
+|26    |  U1                                |Pipeline_CPU               |  4111|
+|27    |    Excute                          |Pipeline_Ex                |    55|
+|28    |      alu_ex                        |ALU                        |    55|
+|29    |    Instruction_Decoder             |Pipeline_ID                |  2252|
+|30    |      ctrl_unit                     |SCPU_ctrl_more             |    41|
+|31    |      reg_file                      |RegFile                    |  2211|
+|32    |    Instruction_Fetch               |Pipeline_IF                |    60|
+|33    |    Memory_Access                   |Pipeline_Mem               |     1|
+|34    |    ex_reg_mem                      |Ex_reg_Mem                 |   278|
+|35    |    id_reg_ex                       |ID_reg_Ex                  |   826|
+|36    |    if_reg_id                       |IF_reg_ID                  |   128|
+|37    |    mem_reg_wb                      |Mem_reg_WB                 |   403|
+|38    |    write_back                      |Pipeline_WB                |    32|
+|39    |  U11                               |VGA                        |  2273|
+|40    |    vga_controller                  |VgaController              |   816|
+|41    |    vga_debugger                    |VgaDebugger                |   882|
+|42    |    vga_display                     |VgaDisplay                 |   575|
++------+------------------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 953.980 ; gain = 674.535
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 194 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:00:56 . Memory (MB): peak = 953.980 ; gain = 313.227
+Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 953.980 ; gain = 674.535
+INFO: [Project 1-571] Translating synthesized netlist
+Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/RAM_B.edf]
+Finished Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/RAM_B.edf]
+Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/MIO_BUS.edf]
+Finished Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/MIO_BUS.edf]
+Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Multi_8CH32.edf]
+Finished Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Multi_8CH32.edf]
+Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/SPIO.edf]
+Finished Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/SPIO.edf]
+Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/clk_div.edf]
+Finished Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/clk_div.edf]
+Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/SAnti_jitter.edf]
+Finished Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/SAnti_jitter.edf]
+Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Counter_x.edf]
+Finished Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Counter_x.edf]
+INFO: [Netlist 29-17] Analyzing 1719 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 624 instances were transformed.
+  AND2 => LUT2: 8 instances
+  AND3 => LUT3: 88 instances
+  AND4 => LUT4: 72 instances
+  INV => LUT1: 40 instances
+  LD => LDCE: 48 instances
+  OR2 => LUT2: 56 instances
+  OR3 => LUT3: 24 instances
+  OR4 => LUT4: 32 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 128 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 128 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+189 Infos, 148 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:05 ; elapsed = 00:01:08 . Memory (MB): peak = 953.980 ; gain = 684.785
+INFO: [Common 17-1381] The checkpoint 'C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.runs/synth_2/CSSTE.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file CSSTE_utilization_synth.rpt -pb CSSTE_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.120 . Memory (MB): peak = 953.980 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat May 21 11:53:44 2022...

@@ -1,4 +1,6 @@
 #系统时钟
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets U1/Rs1_out_IDEX_reg]
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets U1/Rs2_out_IDEX_reg]
 set_property IOSTANDARD LVCMOS18  [get_ports  clk_100mhz]
 set_property PACKAGE_PIN AC18     [get_ports  clk_100mhz]
 set_property IOSTANDARD LVCMOS18  [get_ports  RSTN]
@@ -147,4 +149,3 @@ set_property -dict {PACKAGE_PIN T22 IOSTANDARD LVCMOS33 SLEW FAST} [get_ports {B
 set_property -dict {PACKAGE_PIN T23 IOSTANDARD LVCMOS33 SLEW FAST} [get_ports {Blue[3]}]
 set_property -dict {PACKAGE_PIN M21 IOSTANDARD LVCMOS33 SLEW FAST} [get_ports VSYNC]
 set_property -dict {PACKAGE_PIN M22 IOSTANDARD LVCMOS33 SLEW FAST} [get_ports HSYNC]
-

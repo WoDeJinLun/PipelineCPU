@@ -165,6 +165,7 @@ always @* begin
                 3'b000:begin // beq
                     ill_instr = 0;
                     Branch = 1;
+                    BranchN = 0;
                     Jump = 0;
                     ImmSel = _B;
                     ALUSrc_B = _Reg;
@@ -174,6 +175,7 @@ always @* begin
                 end
                 3'b001:begin // bne
                     ill_instr = 0;
+                    Branch = 0;
                     BranchN = 1;
                     Jump = 0;
                     ImmSel = _B;

@@ -2,6 +2,7 @@ module Mem_reg_WB(
   input clk_MemWB,
   input rst_MemWB,
   input en_MemWB,
+  input NOP,
   input [31:0]PC4_in_MemWB,
   input [4:0]Rd_addr_MemWB,
   input [31:0]ALU_in_MemWB,
@@ -19,8 +20,10 @@ module Mem_reg_WB(
   output reg RegWrite_out_MemWB,
   output reg [31:0] imm_out_MemWB,
   output reg [31:0] Rs2_out_MemWB,
-  output reg [31:0] inst_out_memwb
+  output reg [31:0] inst_out_memwb,
+  output wire [31:0] wt_data_exmem
   );
+  
   always@(posedge clk_MemWB or posedge rst_MemWB)begin
     if(rst_MemWB == 1)begin
       PC4_out_MemWB <= 0;

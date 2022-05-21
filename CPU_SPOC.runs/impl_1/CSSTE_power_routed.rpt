@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Fri May 20 19:13:25 2022
+| Date             : Fri May 20 23:46:01 2022
 | Host             : DESKTOP-SOJGS7H running 64-bit major release  (build 9200)
 | Command          : report_power -file CSSTE_power_routed.rpt -pb CSSTE_power_summary_routed.pb -rpx CSSTE_power_routed.rpx
 | Design           : CSSTE
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 45.670 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 44.889 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 44.224                           |
-| Device Static (W)        | 1.446                            |
+| Dynamic (W)              | 43.506                           |
+| Device Static (W)        | 1.383                            |
 | Effective TJA (C/W)      | 1.9                              |
-| Max Ambient (C)          | 12.1                             |
-| Junction Temperature (C) | 112.9                            |
+| Max Ambient (C)          | 13.6                             |
+| Junction Temperature (C) | 111.4                            |
 | Confidence Level         | Low                              |
 | Setting File             | ---                              |
 | Simulation Activity File | ---                              |
@@ -52,19 +52,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic              |    10.538 |     8255 |       --- |             --- |
-|   LUT as Logic           |     9.491 |     3988 |    101400 |            3.93 |
-|   CARRY4                 |     0.492 |      125 |     25350 |            0.49 |
-|   F7/F8 Muxes            |     0.241 |      947 |    101400 |            0.93 |
-|   Register               |     0.237 |     2205 |    202800 |            1.09 |
-|   LUT as Distributed RAM |     0.045 |      768 |     35000 |            2.19 |
-|   BUFG                   |     0.033 |        6 |        32 |           18.75 |
-|   Others                 |     0.000 |       38 |       --- |             --- |
-| Signals                  |    20.826 |     5714 |       --- |             --- |
+| Slice Logic              |    10.360 |     8319 |       --- |             --- |
+|   LUT as Logic           |     9.298 |     4076 |    101400 |            4.02 |
+|   CARRY4                 |     0.494 |      125 |     25350 |            0.49 |
+|   Register               |     0.246 |     2200 |    202800 |            1.08 |
+|   F7/F8 Muxes            |     0.245 |      935 |    101400 |            0.92 |
+|   LUT as Distributed RAM |     0.043 |      768 |     35000 |            2.19 |
+|   BUFG                   |     0.035 |        6 |        32 |           18.75 |
+|   Others                 |     0.000 |       36 |       --- |             --- |
+| Signals                  |    20.343 |     5817 |       --- |             --- |
 | Block RAM                |     0.110 |        1 |       325 |            0.31 |
-| I/O                      |    12.749 |       44 |       400 |           11.00 |
-| Static Power             |     1.446 |          |           |                 |
-| Total                    |    45.670 |          |           |                 |
+| I/O                      |    12.693 |       44 |       400 |           11.00 |
+| Static Power             |     1.383 |          |           |                 |
+| Total                    |    44.889 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,16 +74,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |    32.773 |      31.553 |      1.220 |
-| Vccaux    |       1.800 |     0.542 |       0.462 |      0.079 |
-| Vcco33    |       3.300 |     3.572 |       3.571 |      0.001 |
+| Vccint    |       1.000 |    32.056 |      30.892 |      1.164 |
+| Vccaux    |       1.800 |     0.536 |       0.460 |      0.076 |
+| Vcco33    |       3.300 |     3.556 |       3.555 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.011 |       0.010 |      0.001 |
 | Vcco15    |       1.500 |     0.020 |       0.019 |      0.001 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.051 |       0.010 |      0.041 |
+| Vccbram   |       1.000 |     0.049 |       0.010 |      0.039 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -142,25 +142,25 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| CSSTE                                          |    44.224 |
-|   U1                                           |     5.048 |
-|     Excute                                     |     0.067 |
-|       alu_ex                                   |     0.067 |
-|     Instruction_Decoder                        |     0.828 |
-|       ctrl_unit                                |     0.005 |
-|       reg_file                                 |     0.823 |
-|     Instruction_Fetch                          |     0.989 |
+| CSSTE                                          |    43.506 |
+|   U1                                           |     4.816 |
+|     Excute                                     |     0.073 |
+|       alu_ex                                   |     0.073 |
+|     Instruction_Decoder                        |     0.756 |
+|       ctrl_unit                                |     0.004 |
+|       reg_file                                 |     0.753 |
+|     Instruction_Fetch                          |     0.914 |
 |     Memory_Access                              |    <0.001 |
-|     ex_reg_mem                                 |     0.579 |
-|     id_reg_ex                                  |     0.728 |
-|     if_reg_id                                  |     0.661 |
-|     mem_reg_wb                                 |     0.422 |
-|     write_back                                 |     0.038 |
-|   U10                                          |     1.720 |
-|   U11                                          |    21.889 |
-|     vga_controller                             |     8.503 |
-|     vga_debugger                               |    10.934 |
-|     vga_display                                |     2.452 |
+|     ex_reg_mem                                 |     0.596 |
+|     id_reg_ex                                  |     0.718 |
+|     if_reg_id                                  |     0.456 |
+|     mem_reg_wb                                 |     0.495 |
+|     write_back                                 |     0.040 |
+|   U10                                          |     1.612 |
+|   U11                                          |    21.701 |
+|     vga_controller                             |     8.377 |
+|     vga_debugger                               |    10.797 |
+|     vga_display                                |     2.526 |
 |       display_data_reg_0_63_0_2                |    <0.001 |
 |       display_data_reg_0_63_3_5                |    <0.001 |
 |       display_data_reg_0_63_6_6                |    <0.001 |
@@ -177,7 +177,7 @@ Table of Contents
 |       display_data_reg_1152_1215_3_5           |    <0.001 |
 |       display_data_reg_1152_1215_6_6           |    <0.001 |
 |       display_data_reg_1152_1215_7_7           |     0.000 |
-|       display_data_reg_1216_1279_0_2           |     0.001 |
+|       display_data_reg_1216_1279_0_2           |    <0.001 |
 |       display_data_reg_1216_1279_3_5           |    <0.001 |
 |       display_data_reg_1216_1279_6_6           |    <0.001 |
 |       display_data_reg_1216_1279_7_7           |     0.000 |
@@ -237,7 +237,7 @@ Table of Contents
 |       display_data_reg_1984_2047_3_5           |    <0.001 |
 |       display_data_reg_1984_2047_6_6           |    <0.001 |
 |       display_data_reg_1984_2047_7_7           |     0.000 |
-|       display_data_reg_2048_2111_0_2           |    <0.001 |
+|       display_data_reg_2048_2111_0_2           |     0.001 |
 |       display_data_reg_2048_2111_3_5           |    <0.001 |
 |       display_data_reg_2048_2111_6_6           |    <0.001 |
 |       display_data_reg_2048_2111_7_7           |     0.000 |
@@ -329,7 +329,7 @@ Table of Contents
 |       display_data_reg_3328_3391_3_5           |    <0.001 |
 |       display_data_reg_3328_3391_6_6           |    <0.001 |
 |       display_data_reg_3328_3391_7_7           |     0.000 |
-|       display_data_reg_3392_3455_0_2           |    <0.001 |
+|       display_data_reg_3392_3455_0_2           |     0.001 |
 |       display_data_reg_3392_3455_3_5           |    <0.001 |
 |       display_data_reg_3392_3455_6_6           |    <0.001 |
 |       display_data_reg_3392_3455_7_7           |     0.000 |
@@ -341,11 +341,11 @@ Table of Contents
 |       display_data_reg_3520_3583_3_5           |    <0.001 |
 |       display_data_reg_3520_3583_6_6           |    <0.001 |
 |       display_data_reg_3520_3583_7_7           |     0.000 |
-|       display_data_reg_3584_3647_0_2           |     0.001 |
+|       display_data_reg_3584_3647_0_2           |    <0.001 |
 |       display_data_reg_3584_3647_3_5           |    <0.001 |
 |       display_data_reg_3584_3647_6_6           |    <0.001 |
 |       display_data_reg_3584_3647_7_7           |     0.000 |
-|       display_data_reg_3648_3711_0_2           |     0.001 |
+|       display_data_reg_3648_3711_0_2           |    <0.001 |
 |       display_data_reg_3648_3711_3_5           |    <0.001 |
 |       display_data_reg_3648_3711_6_6           |    <0.001 |
 |       display_data_reg_3648_3711_7_7           |     0.000 |
@@ -353,7 +353,7 @@ Table of Contents
 |       display_data_reg_3712_3775_3_5           |    <0.001 |
 |       display_data_reg_3712_3775_6_6           |    <0.001 |
 |       display_data_reg_3712_3775_7_7           |     0.000 |
-|       display_data_reg_3776_3839_0_2           |     0.001 |
+|       display_data_reg_3776_3839_0_2           |    <0.001 |
 |       display_data_reg_3776_3839_3_5           |    <0.001 |
 |       display_data_reg_3776_3839_6_6           |    <0.001 |
 |       display_data_reg_3776_3839_7_7           |     0.000 |
@@ -365,7 +365,7 @@ Table of Contents
 |       display_data_reg_384_447_3_5             |    <0.001 |
 |       display_data_reg_384_447_6_6             |    <0.001 |
 |       display_data_reg_384_447_7_7             |     0.000 |
-|       display_data_reg_3904_3967_0_2           |     0.001 |
+|       display_data_reg_3904_3967_0_2           |    <0.001 |
 |       display_data_reg_3904_3967_3_5           |    <0.001 |
 |       display_data_reg_3904_3967_6_6           |    <0.001 |
 |       display_data_reg_3904_3967_7_7           |     0.000 |
@@ -417,44 +417,44 @@ Table of Contents
 |       display_data_reg_960_1023_3_5            |    <0.001 |
 |       display_data_reg_960_1023_6_6            |    <0.001 |
 |       display_data_reg_960_1023_7_7            |     0.000 |
-|   U2                                           |     0.530 |
-|     U0                                         |     0.530 |
-|       synth_options.dist_mem_inst              |     0.530 |
-|         gen_rom.rom_inst                       |     0.530 |
-|   U3                                           |     0.111 |
-|     RAM_B                                      |     0.111 |
-|       U0                                       |     0.111 |
-|         inst_blk_mem_gen                       |     0.111 |
-|           gnbram.gnativebmg.native_blk_mem_gen |     0.111 |
-|             valid.cstr                         |     0.111 |
-|               ramloop[0].ram.r                 |     0.111 |
-|                 prim_init.ram                  |     0.111 |
+|   U2                                           |     0.213 |
+|     U0                                         |     0.213 |
+|       synth_options.dist_mem_inst              |     0.213 |
+|         gen_rom.rom_inst                       |     0.213 |
+|   U3                                           |     0.110 |
+|     RAM_B                                      |     0.110 |
+|       U0                                       |     0.110 |
+|         inst_blk_mem_gen                       |     0.110 |
+|           gnbram.gnativebmg.native_blk_mem_gen |     0.110 |
+|             valid.cstr                         |     0.110 |
+|               ramloop[0].ram.r                 |     0.110 |
+|                 prim_init.ram                  |     0.110 |
 |   U4                                           |     0.004 |
-|   U5                                           |     0.427 |
-|   U6                                           |     0.874 |
-|     inst                                       |     0.874 |
-|       M2                                       |     0.423 |
-|       SM1                                      |     0.451 |
-|         HTS0                                   |     0.038 |
-|           MSEG                                 |     0.038 |
-|         HTS1                                   |     0.053 |
-|           MSEG                                 |     0.053 |
-|         HTS2                                   |     0.054 |
-|           MSEG                                 |     0.054 |
-|         HTS3                                   |     0.053 |
-|           MSEG                                 |     0.053 |
-|         HTS4                                   |     0.052 |
-|           MSEG                                 |     0.052 |
-|         HTS5                                   |     0.056 |
-|           MSEG                                 |     0.056 |
+|   U5                                           |     0.480 |
+|   U6                                           |     0.974 |
+|     inst                                       |     0.974 |
+|       M2                                       |     0.454 |
+|       SM1                                      |     0.520 |
+|         HTS0                                   |     0.045 |
+|           MSEG                                 |     0.045 |
+|         HTS1                                   |     0.060 |
+|           MSEG                                 |     0.060 |
+|         HTS2                                   |     0.064 |
+|           MSEG                                 |     0.064 |
+|         HTS3                                   |     0.064 |
+|           MSEG                                 |     0.064 |
+|         HTS4                                   |     0.064 |
+|           MSEG                                 |     0.064 |
+|         HTS5                                   |     0.072 |
+|           MSEG                                 |     0.072 |
 |         HTS6                                   |     0.077 |
 |           MSEG                                 |     0.077 |
-|         HTS7                                   |     0.067 |
-|           MSEG                                 |     0.067 |
-|   U7                                           |     0.152 |
-|     LED_P2S                                    |     0.152 |
-|   U8                                           |     0.387 |
-|   U9                                           |     0.110 |
+|         HTS7                                   |     0.075 |
+|           MSEG                                 |     0.075 |
+|   U7                                           |     0.158 |
+|     LED_P2S                                    |     0.158 |
+|   U8                                           |     0.397 |
+|   U9                                           |     0.115 |
 +------------------------------------------------+-----------+
 
 

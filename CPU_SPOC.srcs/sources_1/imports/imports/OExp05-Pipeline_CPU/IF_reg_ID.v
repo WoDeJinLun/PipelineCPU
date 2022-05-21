@@ -1,7 +1,7 @@
 module IF_reg_ID(
   input clk_IFID,
   input rst_IFID,
-  input en_IFID,
+  input en_IFID,NOP,
   input [31:0]PC_in_IFID,
   input [31:0]inst_in_IFID,
   output [31:0]PC_out_IFID,
@@ -10,9 +10,9 @@ module IF_reg_ID(
   reg [31:0] pc;
   reg [31:0] inst;
   always@(posedge clk_IFID or posedge rst_IFID)begin
-    if(rst_IFID==1)begin
-      pc <= 0;
-      inst <= 0;
+    if(rst_IFID==1||NOP==1)begin
+      pc <= 32'h00000000;
+      inst <= 32'h00000033;
     end else if(en_IFID==0)begin
       pc <= pc;
       inst <= inst;

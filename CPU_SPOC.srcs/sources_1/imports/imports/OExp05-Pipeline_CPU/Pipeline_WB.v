@@ -7,6 +7,7 @@ module Pipeline_WB(
   input [1:0]MemtoReg_in_WB,
   output reg [31:0]Data_out_WB);
 
+  
   always@* begin 
     case(MemtoReg_in_WB)
       2'b00:Data_out_WB <= ALU_in_WB;

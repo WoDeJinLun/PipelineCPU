@@ -1,12 +1,12 @@
 module ID_reg_Ex(
   input clk_IDEX,
   input rst_IDEX,
-  input en_IDEX,
+  input en_IDEX,NOP,
   input [31:0]PC_in_IDEX,
   input [4:0]Rd_addr_IDEX,
   input [31:0]Rs1_in_IDEx,rs1_addr_in_idex,rs2_addr_in_idex,
   input [31:0]Rs2_in_IDEX,
-  input [31:0]Imm_in_IDEX,
+  input [31:0]Imm_in_IDEX,ALU_EX,
   input ALUSrc_B_in_IDEX,
   input [3:0]ALU_control_in_IDEX,
   input Branch_in_IDEX,
@@ -29,12 +29,15 @@ module ID_reg_Ex(
   output reg [1:0]Jump_out_IDEX,
   output reg [1:0]MemtoReg_out_IDEX,
   output reg RegWrite_out_IDEX,
-  output reg [31:0] inst_out_idex
+  output reg [31:0] inst_out_idex,
+  output wire [31:0] wt_data_idex
   );
-
-
+  Mux4to1_32bit mux (.sel(MemtoReg_out_IDEX),.in0(ALU_EX),
+  .in1(0),.in2(PC_out_IDEX+32'h4),.in3(Imm_out_IDEX),
+  .out(wt_data_idex));
   always@(posedge clk_IDEX or posedge rst_IDEX)begin
-    if(rst_IDEX==1)begin
+    if(rst_IDEX==1'b1||NOP==1'b1) 
+    begin
       PC_out_IDEX <= 0;
       Rd_addr_out_IDEX <= 0;
       Rs1_out_IDEX <= 0;
@@ -51,11 +54,14 @@ module ID_reg_Ex(
       inst_out_idex <= 0;
       rs1_addr_out_idex <= 0;
       rs2_addr_out_idex <= 0;
-    end else if(en_IDEX==0)begin
+//      ALU_Forward <= 0;
+    end 
+    else if(en_IDEX==0)begin
       PC_out_IDEX <= PC_out_IDEX;
       Rd_addr_out_IDEX <= Rd_addr_out_IDEX;
       Rs1_out_IDEX <= Rs1_out_IDEX;
       Rs2_out_IDEX <= Rs2_out_IDEX;
+
       Imm_out_IDEX <= Imm_out_IDEX;
       ALUSrc_B_out_IDEX <= ALUSrc_B_out_IDEX;
       ALU_control_out_IDEX <= ALU_control_out_IDEX;
@@ -68,6 +74,7 @@ module ID_reg_Ex(
       inst_out_idex <= inst_out_idex;
       rs1_addr_out_idex <= rs1_addr_out_idex;
       rs2_addr_out_idex <= rs2_addr_out_idex;
+//      ALU_Forward <= ALU_Forward;
     end else begin
       PC_out_IDEX <= PC_in_IDEX;
       Rd_addr_out_IDEX <= Rd_addr_IDEX;
@@ -85,6 +92,7 @@ module ID_reg_Ex(
       inst_out_idex <= inst_in_idex;
       rs1_addr_out_idex <= rs1_addr_in_idex;
       rs2_addr_out_idex <= rs2_addr_in_idex;
+//      ALU_Forward <= ALU_EX;
     end
   end
 endmodule

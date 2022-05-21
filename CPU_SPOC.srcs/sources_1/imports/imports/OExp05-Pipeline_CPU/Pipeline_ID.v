@@ -1,10 +1,11 @@
 module Pipeline_ID(
   input clk_ID,
   input rst_ID,
+  input [1:0] ForwardA,ForwardB,
   input RegWrite_in_ID,
   input [4:0]Rd_addr_ID,
-  input [31:0]Wt_data_ID,
-  input [31:0]Inst_in_ID,
+  input [31:0]Wt_data_ID,wt_data_exmem,
+  input [31:0]Inst_in_ID,wt_data_idex,
   output [4:0]Rd_addr_out_ID,
   output [31:0]Rs1_out_ID,
   output [31:0]Rs2_out_ID,
@@ -34,8 +35,14 @@ module Pipeline_ID(
   .Rs1_addr(Inst_in_ID[19:15]),.Rs2_addr(Inst_in_ID[24:20]),.Wt_addr(Rd_addr_ID),
   .Wt_data(Wt_data_ID),.restore_data(1024'h0),
   .Rs1_data(Rs1_out_ID_temp),.Rs2_data(Rs2_out_ID_temp),.Reg_value(Reg_value));
-   assign Rs1_out_ID = (rs1_ex==Rd_addr_ID)?Wt_data_ID:Rs1_out_ID_temp;
-   assign Rs2_out_ID = (rs2_ex==Rd_addr_ID)?Wt_data_ID:Rs2_out_ID_temp;
-    assign rs1_ex = Inst_in_ID[19:15];
-    assign rs2_ex = Inst_in_ID[24:20];
+
+   assign rs1_ex = Inst_in_ID[19:15];
+   assign rs2_ex = Inst_in_ID[24:20];
+   
+   Mux4to1_32bit mux1(
+    .sel(ForwardA),.in0(Rs1_out_ID_temp),.in1(wt_data_idex),.in2(wt_data_exmem),.in3(Wt_data_ID),.out(Rs1_out_ID)
+   );
+   Mux4to1_32bit mux2(
+    .sel(ForwardB),.in0(Rs2_out_ID_temp),.in1(wt_data_idex),.in2(wt_data_exmem),.in3(Wt_data_ID),.out(Rs2_out_ID)
+   );
 endmodule

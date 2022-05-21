@@ -26,7 +26,7 @@ module Stall(
     Rd_addr_out_IDEX,Rd_addr_out_EXMEM,Rd_addr_out_MEMWB,
     input wire RegWrite_out_IDEX,RegWrite_out_EXMEM,RegWrite_out_MEMWB,MemtoReg_IDEX,
     input wire [1:0] PCSrc,
-    output reg en_IF,en_IFID,NOP_IDEX,NOP_IFID,
+    output reg en_IF,en_IFID,NOP_IDEX,NOP_IFID,NOP_EXMEM,
     output reg [1:0] ForwardA,ForwardB
     );
         
@@ -55,16 +55,21 @@ module Stall(
             en_IFID <= 1;
             NOP_IDEX <= 1;
             NOP_IFID <= 1;
-        end else if(MemtoReg_IDEX==2'b01) begin
+            NOP_EXMEM <= 1;
+        end else if(MemtoReg_IDEX==2'b01 &&
+        (Rs1_addr_ID == Rd_addr_out_IDEX || Rs2_addr_ID == Rd_addr_out_IDEX)&&
+         RegWrite_out_IDEX==1) begin
             en_IF <= 0;
             en_IFID <= 0;
             NOP_IDEX <= 1;
             NOP_IFID <= 0;
+            NOP_EXMEM <= 0;
         end else begin
             en_IF <= 1;
             en_IFID <= 1;
             NOP_IDEX <= 0;
             NOP_IFID <= 0;
+            NOP_EXMEM <= 0;
         end
         end
     end
