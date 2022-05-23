@@ -9,7 +9,7 @@
     <Object name="xc7k160t_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value=""/>
       <Properties Property="PROBES.FILE" value=""/>
-      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/CSSTE.bit"/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_3/CSSTE.bit"/>
       <Properties Property="SLR.COUNT" value="C:/Users/86173/AppData/Roaming/Xilinx/Vivado/1"/>
     </Object>
     <Object name="xc7k160t_0_1" gui_info="">

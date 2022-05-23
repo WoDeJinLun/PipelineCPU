@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_2" LaunchPart="xc7k160tffg676-2L" LaunchTime="1653105149">
   <File Type="PA-TCL" Name="CSSTE.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="CSSTE_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="CSSTE_reports.tcl"/>
   <File Type="RDS-RDS" Name="CSSTE.vds"/>
   <File Type="RDS-UTIL" Name="CSSTE_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="CSSTE_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="CSSTE.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="CSSTE_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="CSSTE_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/Supplementary/Counter_x.edf">
@@ -512,14 +509,18 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/testextend.coe">
+    <File Path="$PSRCDIR/sources_1/imports/CPU_SPOC/testextend.coe">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/testextend.coe"/>
+        <Attr Name="ImportTime" Val="1650885103"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/I_mem.coe">
+    <File Path="$PSRCDIR/sources_1/imports/CPU_SPOC/I_mem.coe">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/I_mem.coe"/>
+        <Attr Name="ImportTime" Val="1653049192"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

@@ -509,14 +509,18 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/testextend.coe">
+    <File Path="$PSRCDIR/sources_1/imports/CPU_SPOC/testextend.coe">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/testextend.coe"/>
+        <Attr Name="ImportTime" Val="1650885103"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/I_mem.coe">
+    <File Path="$PSRCDIR/sources_1/imports/CPU_SPOC/I_mem.coe">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/I_mem.coe"/>
+        <Attr Name="ImportTime" Val="1653049192"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

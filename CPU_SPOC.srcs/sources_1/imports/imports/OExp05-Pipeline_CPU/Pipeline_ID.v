@@ -31,6 +31,7 @@ module Pipeline_ID(
 
   immGen imm_generate (.ImmSel(ImmSel),.inst_field(Inst_in_ID),.Imm_out(Imm_out_ID));
   assign Rd_addr_out_ID = Inst_in_ID[11:7];
+  
   RegFile reg_file (.clk(clk_ID),.rst(rst_ID),.RegWrite(RegWrite_in_ID),.restore(1'b0),
   .Rs1_addr(Inst_in_ID[19:15]),.Rs2_addr(Inst_in_ID[24:20]),.Wt_addr(Rd_addr_ID),
   .Wt_data(Wt_data_ID),.restore_data(1024'h0),

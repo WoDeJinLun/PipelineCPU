@@ -24,8 +24,8 @@ module Stall(
     input wire rst_stall,
     input wire [4:0] Rs1_addr_ID,Rs2_addr_ID,
     Rd_addr_out_IDEX,Rd_addr_out_EXMEM,Rd_addr_out_MEMWB,
-    input wire RegWrite_out_IDEX,RegWrite_out_EXMEM,RegWrite_out_MEMWB,MemtoReg_IDEX,
-    input wire [1:0] PCSrc,
+    input wire RegWrite_out_IDEX,RegWrite_out_EXMEM,RegWrite_out_MEMWB,
+    input wire [1:0] PCSrc,MemtoReg_IDEX,
     output reg en_IF,en_IFID,NOP_IDEX,NOP_IFID,NOP_EXMEM,
     output reg [1:0] ForwardA,ForwardB
     );

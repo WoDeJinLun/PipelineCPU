@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sat May 21 14:44:11 2022
+| Date         : Mon May 23 18:07:24 2022
 | Host         : DESKTOP-SOJGS7H running 64-bit major release  (build 9200)
 | Command      : report_drc -file CSSTE_drc_routed.rpt -pb CSSTE_drc_routed.pb -rpx CSSTE_drc_routed.rpx
 | Design       : CSSTE
@@ -56,12 +56,12 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net U1/if_reg_id/ALUSrc_B_out_IDEX_reg_0 is a gated clock net sourced by a combinational pin U1/if_reg_id/ALUSrc_B_reg_i_2/O, cell U1/if_reg_id/ALUSrc_B_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net U1/if_reg_id/ALUSrc_B_out_IDEX_reg is a gated clock net sourced by a combinational pin U1/if_reg_id/ALUSrc_B_reg_i_2/O, cell U1/if_reg_id/ALUSrc_B_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net U1/if_reg_id/ALU_control_out_IDEX_reg[0][0] is a gated clock net sourced by a combinational pin U1/if_reg_id/ALU_Control_reg[3]_i_2/O, cell U1/if_reg_id/ALU_Control_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net U1/if_reg_id/ALU_control_out_IDEX_reg[3]_0[0] is a gated clock net sourced by a combinational pin U1/if_reg_id/ALU_Control_reg[3]_i_2/O, cell U1/if_reg_id/ALU_Control_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning

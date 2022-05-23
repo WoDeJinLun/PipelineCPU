@@ -31,7 +31,7 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="50"/>
+    <Option Name="WTXSimLaunchSim" Val="57"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -156,15 +156,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/HazardCheck.v">
         <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/Hex2Ascii.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（学生版）/OExp02-IP2SOC/IP/Supplementary/VGA/VGA.srcs/sources_1/new/Hex2Ascii.v"/>
-          <Attr Name="ImportTime" Val="1613819706"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -310,37 +301,29 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/imports/Framework/VGA.v">
+      <File Path="$PSRCDIR/sources_1/new/VGA.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../project4_cpu/project4_cpu.srcs/sources_1/imports/Framework/VGA.v"/>
-          <Attr Name="ImportTime" Val="1621158231"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/imports/Framework/VgaController.v">
+      <File Path="$PSRCDIR/sources_1/new/VgaController.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../project4_cpu/project4_cpu.srcs/sources_1/imports/Framework/VgaController.v"/>
-          <Attr Name="ImportTime" Val="1621007351"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/imports/Framework/VgaDebugger.v">
+      <File Path="$PSRCDIR/sources_1/new/VgaDebugger.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../project4_cpu/project4_cpu.srcs/sources_1/imports/Framework/VgaDebugger.v"/>
-          <Attr Name="ImportTime" Val="1621007351"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/imports/Framework/VgaDisplay.v">
+      <File Path="$PSRCDIR/sources_1/new/VgaDisplay.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../project4_cpu/project4_cpu.srcs/sources_1/imports/Framework/VgaDisplay.v"/>
-          <Attr Name="ImportTime" Val="1652087788"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -377,54 +360,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（老师版）/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v"/>
           <Attr Name="ImportTime" Val="1648889761"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/ctrl_unit.v">
-        <FileInfo RelPath="ctrl_unit.v">
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/VGA.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（学生版）/OExp02-IP2SOC/IP/Supplementary/VGA/VGA.srcs/sources_1/new/VGA.v"/>
-          <Attr Name="ImportTime" Val="1613820752"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/VgaDisplay.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（学生版）/OExp02-IP2SOC/IP/Supplementary/VGA/VGA.srcs/sources_1/new/VgaDisplay.v"/>
-          <Attr Name="ImportTime" Val="1615359192"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/VgaDebugger.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（学生版）/OExp02-IP2SOC/IP/Supplementary/VGA/VGA.srcs/sources_1/new/VgaDebugger.v"/>
-          <Attr Name="ImportTime" Val="1613819618"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/VgaController.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（学生版）/OExp02-IP2SOC/IP/Supplementary/VGA/VGA.srcs/sources_1/new/VgaController.v"/>
-          <Attr Name="ImportTime" Val="1613819354"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -540,30 +475,34 @@
           <Attr Name="ImportTime" Val="1646207293"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/vga_debugger.mem">
+      <File Path="$PSRCDIR/sources_1/imports/CPU_SPOC/testextend.coe">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（学生版）/OExp02-IP2SOC/IP/Supplementary/VGA/VGA.srcs/sources_1/new/vga_debugger.mem"/>
-          <Attr Name="ImportTime" Val="1610696948"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/testextend.coe"/>
+          <Attr Name="ImportTime" Val="1650885103"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/font_8x16.mem">
+      <File Path="$PSRCDIR/sources_1/imports/CPU_SPOC/I_mem.coe">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../subjects/计组/Lab02 CPU实验环境搭建/Lab02 CPU实验环境搭建（学生版）/OExp02-IP2SOC/IP/Supplementary/VGA/VGA.srcs/sources_1/new/font_8x16.mem"/>
-          <Attr Name="ImportTime" Val="1610696882"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/I_mem.coe"/>
+          <Attr Name="ImportTime" Val="1653049192"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/testextend.coe">
+      <File Path="$PSRCDIR/sources_1/imports/CPU_SPOC/font_8x16.mem">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/font_8x16.mem"/>
+          <Attr Name="ImportTime" Val="1621007351"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/I_mem.coe">
+      <File Path="$PSRCDIR/sources_1/imports/CPU_SPOC/vga_debugger.mem">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/vga_debugger.mem"/>
+          <Attr Name="ImportTime" Val="1621007351"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -652,9 +591,7 @@
     </Run>
     <Run Id="synth_2" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7k160tffg676-2L" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/synth_2" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design">
           <Option Id="NoSrlExtract">1</Option>
           <Option Id="NoCombineLuts">1</Option>
@@ -666,9 +603,7 @@
     </Run>
     <Run Id="synth_3" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7k160tffg676-2L" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_3" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -694,9 +629,7 @@
     </Run>
     <Run Id="impl_2" Type="Ft2:EntireDesign" Part="xc7k160tffg676-2L" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="synth_2" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -712,9 +645,7 @@
     </Run>
     <Run Id="impl_3" Type="Ft2:EntireDesign" Part="xc7k160tffg676-2L" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_3" SynthRun="synth_3" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

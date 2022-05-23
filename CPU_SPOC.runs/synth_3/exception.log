@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file C:\Users\86173\Documents\code\vivado\CPU_SPOC\CPU_SPOC.runs\synth_3/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: 没有权限

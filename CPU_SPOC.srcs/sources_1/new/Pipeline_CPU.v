@@ -28,7 +28,7 @@ input wire [31:0] inst_IF,
 output wire [31:0] PC_out_EX,
 output wire [31:0] PC_out_ID,
 output wire [31:0] inst_ID,
-output wire [31:0] PC_out_IF,PC_out_idex,PC_out_exmem,PC_out_memwb,
+output wire [31:0] PC_out_IF,PC_out_idex,PC_out_exmem,PC_out_memwb,ALU_out_EX,
 output wire [31:0] Addr_out,Data_out,Data_out_WB,mem_w_data,imm_ex,reg_w_data,
 output wire MemRW_Mem,MemRW_EX,reg_wen_wb,reg_wen_mem,mem_wen_mem,is_jal_mem,is_jalr_mem,
 reg_wen_ex,is_imm_ex,mem_wen_ex,is_branch_ex,is_jal_ex,is_jalr_ex,is_auipc_ex,is_lui_ex,cmp_ctrl_ex,
@@ -37,14 +37,15 @@ output wire [3:0] alu_ctrl_ex,
 output wire [4:0] rs1_ex,rs2_ex,rd_ex,rd_wb,rd_mem,
 output wire [31:0] Rs1_val,
 output wire [31:0] Rs2_val,
-output wire [31:0] inst_idex,inst_exmem,inst_memwb
+output wire [31:0] inst_idex,inst_exmem,inst_memwb,wt_data_idex,wt_data_exmem,Rs1_out_ID,Rs2_out_ID,
+output wire [1:0] ForwardA,ForwardB,MemtoReg_out_IDEX,MemtoReg_out_MemWB,MemtoReg_out_EXMem
     );
 wire [31:0] Rs2_out_MemWB;
 // inst fetch
-wire [31:0] PC_in_IF,ALU_out_EX,wt_data_exmem,wt_data_idex,ALU_Forward;
+wire [31:0] PC_in_IF,ALU_Forward;
 wire [1:0] PCSrc;
 wire en_IF,en_IFID,NOP_IFID,NOP_IDEX,NOP_EXMEM;
-wire [1:0] ForwardA,ForwardB;
+//wire [1:0] ForwardA,ForwardB;
 Pipeline_IF Instruction_Fetch (.clk_IF(clk),.rst_IF(rst),
 .en_IF(en_IF),.PC_in_IF(PC_in_IF),.Rs2_in_IF(Rs2_out_MemWB),.PCSrc(PCSrc),.PC_out_IF(PC_out_IF));
 
@@ -58,7 +59,7 @@ wire RegWrite_in_ID,ALUSrc_B_ID,Branch_ID,BranchN_ID,MemRW_ID,RegWrite_out_ID;
 wire [3:0] ALU_control_ID;
 wire [1:0] MemtoReg_ID,Jump_ID;
 wire [4:0] Rd_addr_out_ID,Rd_addr_ID,Rd_addr_out_MemWB,rs1_ex_id,rs2_ex_id;
-wire [31:0] Rs1_out_ID,Rs2_out_ID,Imm_out_ID;
+wire [31:0] Imm_out_ID;
 wire [31:0] PC_out_IDEX,Rs1_out_IDEX,Rs2_out_IDEX,Imm_out_IDEX,ALU_out_EXMem;
 Pipeline_ID Instruction_Decoder (.clk_ID(clk),.rst_ID(rst),
 .RegWrite_in_ID(RegWrite_in_ID),.Rd_addr_ID(Rd_addr_out_MemWB),
@@ -72,7 +73,7 @@ Pipeline_ID Instruction_Decoder (.clk_ID(clk),.rst_ID(rst),
 assign alu_ctrl_ex = ALU_control_ID;
 // ID_reg_Ex
 wire [4:0] Rd_addr_out_IDEX;
-wire [1:0] MemtoReg_out_IDEX,Jump_out_IDEX;
+wire [1:0] Jump_out_IDEX;
 wire ALUSrc_B_out_IDEX,Branch_out_IDEX,BranchN_out_IDEX,MemRW_out_IDEX,RegWrite_out_IDEX;
 wire [3:0] ALU_control_out_IDEX;
 
@@ -118,7 +119,7 @@ Pipeline_Ex Excute(.PC_in_EX(PC_out_IDEX),.Rs1_in_EX(Rs1_out_IDEX),
 // EX_REG_MEM
 wire zero_out_EXMem,Branch_out_EXMem,BranchN_out_EXMem,MemRW_out_EXMem,RegWrite_out_EXMem;
 wire [1:0] Jump_out_EXMem;
-wire [1:0] MemtoReg_out_EXMem;
+//wire [1:0] MemtoReg_out_EXMem;
 wire [4:0] Rd_addr_out_EXMem;
 wire [31:0] PC_out_EXMem,PC4_out_EXMem,Rs2_out_EXMem,imm_out_EXMem;
 
@@ -150,7 +151,7 @@ Pipeline_Mem Memory_Access (.zero_in_Mem(zero_out_EXMem),
 .Jump_in_Mem(Jump_out_EXMem),.PCSrc(PCSrc));
 
 // Mem reg WB
-wire [1:0] MemtoReg_out_MemWB;
+
 wire [31:0] PC4_out_MemWB,ALU_out_MemWB,DMem_data_out_MemWB,imm_out_MemWB;
 Mem_reg_WB mem_reg_wb (.clk_MemWB(clk),.rst_MemWB(rst),.en_MemWB(1'b1),.inst_in_memwb(inst_exmem),
 .PC4_in_MemWB(PC4_out_EXMem),.Rd_addr_MemWB(Rd_addr_out_EXMem),.Rs2_in_MemWB(Rs2_out_EXMem),.ALU_in_MemWB(ALU_out_EXMem),

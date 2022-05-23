@@ -17,10 +17,9 @@ Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 19908 
-CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module Hex2Ascii [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v:3]
+INFO: Helper process launched with PID 1880 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 387.766 ; gain = 111.469
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 376.613 ; gain = 98.977
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'CSSTE' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:23]
 INFO: [Synth 8-638] synthesizing module 'Pipeline_CPU' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:23]
@@ -65,8 +64,6 @@ INFO: [Synth 8-256] done synthesizing module 'Mux4to1_32bit' (6#1) [C:/Users/861
 INFO: [Synth 8-256] done synthesizing module 'Pipeline_ID' (7#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_ID.v:1]
 INFO: [Synth 8-638] synthesizing module 'ID_reg_Ex' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/ID_reg_Ex.v:1]
 INFO: [Synth 8-256] done synthesizing module 'ID_reg_Ex' (8#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/ID_reg_Ex.v:1]
-WARNING: [Synth 8-689] width (5) of port connection 'rs1_addr_in_idex' does not match port width (32) of module 'ID_reg_Ex' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:80]
-WARNING: [Synth 8-689] width (5) of port connection 'rs2_addr_in_idex' does not match port width (32) of module 'ID_reg_Ex' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:81]
 INFO: [Synth 8-638] synthesizing module 'Pipeline_Ex' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Ex.v:1]
 INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ALU.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ALU.v:33]
@@ -77,18 +74,15 @@ INFO: [Synth 8-256] done synthesizing module 'Ex_reg_Mem' (11#1) [C:/Users/86173
 INFO: [Synth 8-638] synthesizing module 'Pipeline_Mem' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Mem.v:1]
 INFO: [Synth 8-256] done synthesizing module 'Pipeline_Mem' (12#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_Mem.v:1]
 INFO: [Synth 8-638] synthesizing module 'Mem_reg_WB' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Mem_reg_WB.v:1]
-WARNING: [Synth 8-3848] Net wt_data_exmem in module/entity Mem_reg_WB does not have driver. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Mem_reg_WB.v:24]
 INFO: [Synth 8-256] done synthesizing module 'Mem_reg_WB' (13#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Mem_reg_WB.v:1]
-WARNING: [Synth 8-350] instance 'mem_reg_wb' of module 'Mem_reg_WB' requires 23 connections, but only 21 given [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:155]
 INFO: [Synth 8-638] synthesizing module 'Pipeline_WB' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_WB.v:2]
 INFO: [Synth 8-256] done synthesizing module 'Pipeline_WB' (14#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/OExp05-Pipeline_CPU/Pipeline_WB.v:2]
 INFO: [Synth 8-638] synthesizing module 'Stall' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/HazardCheck.v:23]
 INFO: [Synth 8-256] done synthesizing module 'Stall' (15#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/HazardCheck.v:23]
-WARNING: [Synth 8-689] width (2) of port connection 'MemtoReg_IDEX' does not match port width (1) of module 'Stall' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:189]
 WARNING: [Synth 8-3848] Net is_auipc_ex in module/entity Pipeline_CPU does not have driver. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:34]
 WARNING: [Synth 8-3848] Net cmp_ctrl_ex in module/entity Pipeline_CPU does not have driver. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:34]
 INFO: [Synth 8-256] done synthesizing module 'Pipeline_CPU' (16#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/Pipeline_CPU.v:23]
-WARNING: [Synth 8-350] instance 'U1' of module 'Pipeline_CPU' requires 45 connections, but only 40 given [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:90]
+WARNING: [Synth 8-350] instance 'U1' of module 'Pipeline_CPU' requires 55 connections, but only 41 given [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:90]
 INFO: [Synth 8-638] synthesizing module 'ROM_D_0' [c:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/ip/ROM_D_0/synth/ROM_D_0.vhd:66]
 	Parameter C_FAMILY bound to: kintex7 - type: string 
 	Parameter C_ADDR_WIDTH bound to: 10 - type: integer 
@@ -173,27 +167,26 @@ INFO: [Synth 8-638] synthesizing module 'clk_div' [C:/Users/86173/Documents/code
 INFO: [Synth 8-638] synthesizing module 'SAnti_jitter' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/SAnti_jitter.v:15]
 WARNING: [Synth 8-350] instance 'U9' of module 'SAnti_jitter' requires 13 connections, but only 8 given [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:186]
 INFO: [Synth 8-638] synthesizing module 'Counter_x' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Counter_x.v:15]
-INFO: [Synth 8-638] synthesizing module 'VGA' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:2]
-INFO: [Synth 8-638] synthesizing module 'VgaController' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaController.v:1]
+INFO: [Synth 8-638] synthesizing module 'VGA' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VGA.v:2]
+INFO: [Synth 8-638] synthesizing module 'VgaController' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaController.v:1]
 	Parameter HS_1 bound to: 96 - type: integer 
 	Parameter VS_1 bound to: 2 - type: integer 
 	Parameter HS_2 bound to: 157 - type: integer 
 	Parameter VS_2 bound to: 57 - type: integer 
 	Parameter WIDTH bound to: 640 - type: integer 
 	Parameter HEIGHT bound to: 480 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'VgaController' (36#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaController.v:1]
-INFO: [Synth 8-638] synthesizing module 'VgaDisplay' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:1]
-INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:14]
-INFO: [Synth 8-3876] $readmem data file 'C://Users//86173//Documents//code//vivado//CPU_SPOC//vga_debugger.mem' is read successfully [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:15]
-INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:24]
-INFO: [Synth 8-3876] $readmem data file 'C://Users//86173//Documents//code//vivado//CPU_SPOC//font_8x16.mem' is read successfully [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:25]
-INFO: [Synth 8-256] done synthesizing module 'VgaDisplay' (37#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDisplay.v:1]
-INFO: [Synth 8-638] synthesizing module 'VgaDebugger' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v:31]
-INFO: [Synth 8-638] synthesizing module 'Hex2Ascii' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v:3]
-INFO: [Synth 8-256] done synthesizing module 'Hex2Ascii' (38#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v:3]
-INFO: [Synth 8-256] done synthesizing module 'VgaDebugger' (39#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VgaDebugger.v:31]
-INFO: [Synth 8-256] done synthesizing module 'VGA' (40#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:2]
-WARNING: [Synth 8-350] instance 'U11' of module 'VGA' requires 45 connections, but only 44 given [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:208]
+INFO: [Synth 8-256] done synthesizing module 'VgaController' (36#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaController.v:1]
+INFO: [Synth 8-638] synthesizing module 'VgaDisplay' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaDisplay.v:1]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaDisplay.v:14]
+INFO: [Synth 8-3876] $readmem data file 'C://Users//86173//Documents//code//vivado//CPU_SPOC//vga_debugger.mem' is read successfully [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaDisplay.v:15]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaDisplay.v:24]
+INFO: [Synth 8-3876] $readmem data file 'C://Users//86173//Documents//code//vivado//CPU_SPOC//font_8x16.mem' is read successfully [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaDisplay.v:25]
+INFO: [Synth 8-256] done synthesizing module 'VgaDisplay' (37#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaDisplay.v:1]
+INFO: [Synth 8-638] synthesizing module 'VgaDebugger' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaDebugger.v:31]
+INFO: [Synth 8-638] synthesizing module 'Hex2Ascii' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaDebugger.v:3]
+INFO: [Synth 8-256] done synthesizing module 'Hex2Ascii' (38#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaDebugger.v:3]
+INFO: [Synth 8-256] done synthesizing module 'VgaDebugger' (39#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VgaDebugger.v:31]
+INFO: [Synth 8-256] done synthesizing module 'VGA' (40#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VGA.v:2]
 INFO: [Synth 8-256] done synthesizing module 'CSSTE' (41#1) [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:23]
 WARNING: [Synth 8-3331] design VGA has unconnected port MemRW_Ex
 WARNING: [Synth 8-3331] design VGA has unconnected port MemRW_Mem
@@ -297,7 +290,7 @@ WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port d
 WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_12_synth has unconnected port dpo[2]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 454.953 ; gain = 178.656
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 454.078 ; gain = 176.441
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -306,20 +299,16 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IfId_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
-WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
-WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_is_auipc to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
-WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_cmp_ctrl[2] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
-WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_cmp_ctrl[1] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
-WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_cmp_ctrl[0] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
-WARNING: [Synth 8-3295] tying undriven pin vga_debugger:ExMa_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
-WARNING: [Synth 8-3295] tying undriven pin vga_debugger:MaWb_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/imports/Framework/VGA.v:63]
-WARNING: [Synth 8-3295] tying undriven pin U11:alu_ctrl_ex[3] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:208]
-WARNING: [Synth 8-3295] tying undriven pin U11:alu_ctrl_ex[2] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:208]
-WARNING: [Synth 8-3295] tying undriven pin U11:alu_ctrl_ex[1] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:208]
-WARNING: [Synth 8-3295] tying undriven pin U11:alu_ctrl_ex[0] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/sources_1/new/CSSTE.v:208]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IfId_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_is_auipc to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_cmp_ctrl[2] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_cmp_ctrl[1] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:IdEx_cmp_ctrl[0] to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:ExMa_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VGA.v:63]
+WARNING: [Synth 8-3295] tying undriven pin vga_debugger:MaWb_valid to constant 0 [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/VGA.v:63]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 454.953 ; gain = 178.656
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 454.078 ; gain = 176.441
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 320 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -329,10 +318,7 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc]
-WARNING: [Vivado 12-507] No nets matched 'U1/Rs1_out_IDEX_reg'. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc:2]
-WARNING: [Vivado 12-507] No nets matched 'U1/Rs2_out_IDEX_reg'. [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc:3]
 Finished Parsing XDC File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/CSSTE_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/constrs_1/imports/OExp02-IP2SOC/Org-Sword.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/CSSTE_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/CSSTE_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.runs/synth_3/dont_touch.xdc]
@@ -349,16 +335,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   OR3 => LUT3: 24 instances
   OR4 => LUT4: 32 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 814.957 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 815.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 814.957 ; gain = 538.660
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 815.594 ; gain = 537.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k160tffg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 814.957 ; gain = 538.660
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 815.594 ; gain = 537.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -366,7 +352,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for U2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U6. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 814.957 ; gain = 538.660
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 815.594 ; gain = 537.957
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "ill_instr0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ill_instr" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -429,7 +415,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'ALU_Control_reg' [C:/Users/
 WARNING: [Synth 8-327] inferring latch for variable 'C_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/new/ALU.v:31]
 WARNING: [Synth 8-327] inferring latch for variable 'NOP_EXMEM_reg' [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/new/HazardCheck.v:58]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 814.957 ; gain = 538.660
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 815.594 ; gain = 537.957
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -692,7 +678,7 @@ INFO: [Synth 8-3886] merging instance 'U1/mem_reg_wb/Rd_addr_out_MemWB_reg[4]' (
 INFO: [Synth 8-3886] merging instance 'U1/mem_reg_wb/Rd_addr_out_MemWB_reg[3]' (FDC) to 'U1/mem_reg_wb/inst_out_memwb_reg[10]'
 INFO: [Synth 8-3886] merging instance 'U1/mem_reg_wb/Rd_addr_out_MemWB_reg[2]' (FDC) to 'U1/mem_reg_wb/inst_out_memwb_reg[9]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 814.957 ; gain = 538.660
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 815.594 ; gain = 537.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -730,13 +716,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 878.844 ; gain = 602.547
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 877.137 ; gain = 599.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 885.695 ; gain = 609.398
+Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 884.070 ; gain = 606.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -762,7 +748,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 954.805 ; gain = 678.508
+Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 954.602 ; gain = 676.965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -786,7 +772,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:00 ; elapsed = 00:01:02 . Memory (MB): peak = 954.805 ; gain = 678.508
+Finished IO Insertion : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 954.602 ; gain = 676.965
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -799,7 +785,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 954.805 ; gain = 678.508
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 954.602 ; gain = 676.965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -811,25 +797,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 954.805 ; gain = 678.508
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 954.602 ; gain = 676.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 954.805 ; gain = 678.508
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 954.602 ; gain = 676.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 954.805 ; gain = 678.508
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 954.602 ; gain = 676.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 954.805 ; gain = 678.508
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 954.602 ; gain = 676.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -866,11 +852,11 @@ Report Cell Usage:
 |12    |CARRY4              |    83|
 |13    |INV                 |    40|
 |14    |LUT1                |    71|
-|15    |LUT2                |   249|
-|16    |LUT3                |    92|
-|17    |LUT4                |   322|
-|18    |LUT5                |   715|
-|19    |LUT6                |  2182|
+|15    |LUT2                |   185|
+|16    |LUT3                |   125|
+|17    |LUT4                |   356|
+|18    |LUT5                |   717|
+|19    |LUT6                |  2181|
 |20    |MUXF7               |   642|
 |21    |MUXF8               |   257|
 |22    |OR2                 |    56|
@@ -891,7 +877,7 @@ Report Instance Areas:
 +------+------------------------------------+---------------------------+------+
 |      |Instance                            |Module                     |Cells |
 +------+------------------------------------+---------------------------+------+
-|1     |top                                 |                           |  7406|
+|1     |top                                 |                           |  7410|
 |2     |  U2                                |ROM_D_0                    |    20|
 |3     |    U0                              |dist_mem_gen_v8_0_12       |    20|
 |4     |      \synth_options.dist_mem_inst  |dist_mem_gen_v8_0_12_synth |    20|
@@ -916,33 +902,33 @@ Report Instance Areas:
 |23    |          MSEG                      |MC14495_ZJU_8              |    41|
 |24    |        HTS7                        |Hex2Seg_7                  |    42|
 |25    |          MSEG                      |MC14495_ZJU                |    42|
-|26    |  U1                                |Pipeline_CPU               |  4250|
+|26    |  U1                                |Pipeline_CPU               |  4261|
 |27    |    Excute                          |Pipeline_Ex                |    55|
 |28    |      alu_ex                        |ALU                        |    55|
 |29    |    check_hazard                    |Stall                      |     2|
-|30    |    Instruction_Decoder             |Pipeline_ID                |  2252|
+|30    |    Instruction_Decoder             |Pipeline_ID                |  2263|
 |31    |      ctrl_unit                     |SCPU_ctrl_more             |    41|
-|32    |      reg_file                      |RegFile                    |  2211|
+|32    |      reg_file                      |RegFile                    |  2222|
 |33    |    Instruction_Fetch               |Pipeline_IF                |    92|
 |34    |    Memory_Access                   |Pipeline_Mem               |     1|
-|35    |    ex_reg_mem                      |Ex_reg_Mem                 |   311|
+|35    |    ex_reg_mem                      |Ex_reg_Mem                 |   345|
 |36    |      mux                           |Mux4to1_32bit_0            |    32|
-|37    |    id_reg_ex                       |ID_reg_Ex                  |   898|
+|37    |    id_reg_ex                       |ID_reg_Ex                  |   864|
 |38    |      mux                           |Mux4to1_32bit              |    32|
 |39    |    if_reg_id                       |IF_reg_ID                  |   128|
 |40    |    mem_reg_wb                      |Mem_reg_WB                 |   403|
 |41    |    write_back                      |Pipeline_WB                |    32|
-|42    |  U11                               |VGA                        |  2273|
+|42    |  U11                               |VGA                        |  2266|
 |43    |    vga_controller                  |VgaController              |   816|
-|44    |    vga_debugger                    |VgaDebugger                |   882|
+|44    |    vga_debugger                    |VgaDebugger                |   875|
 |45    |    vga_display                     |VgaDisplay                 |   575|
 +------+------------------------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 954.805 ; gain = 678.508
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 954.602 ; gain = 676.965
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 249 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:00:56 . Memory (MB): peak = 954.805 ; gain = 318.504
-Synthesis Optimization Complete : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 954.805 ; gain = 678.508
+Synthesis finished with 0 errors, 0 critical warnings and 195 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:00:56 . Memory (MB): peak = 954.602 ; gain = 315.449
+Synthesis Optimization Complete : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 954.602 ; gain = 676.965
 INFO: [Project 1-571] Translating synthesized netlist
 Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/RAM_B.edf]
 Finished Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/RAM_B.edf]
@@ -959,7 +945,7 @@ Finished Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SP
 Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Counter_x.edf]
 Finished Parsing EDIF File [C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.srcs/sources_1/imports/Supplementary/Counter_x.edf]
 INFO: [Netlist 29-17] Analyzing 1728 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2017.4
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 3 load pin(s).
@@ -978,10 +964,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 128 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-189 Infos, 145 Warnings, 1 Critical Warnings and 0 Errors encountered.
+189 Infos, 131 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 954.805 ; gain = 685.055
+synth_design: Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 954.602 ; gain = 685.195
 INFO: [Common 17-1381] The checkpoint 'C:/Users/86173/Documents/code/vivado/CPU_SPOC/CPU_SPOC.runs/synth_3/CSSTE.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file CSSTE_utilization_synth.rpt -pb CSSTE_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 954.805 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat May 21 14:42:50 2022...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 954.602 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon May 23 18:05:32 2022...

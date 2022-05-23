@@ -24,10 +24,11 @@ module sim_pipeline;
 reg [31:0] Data_in,Inst_in;
 reg rst,clk;
 wire [31:0] PC_out_IF,PC_out_EX,PC_out_ID,PC_out_idex,PC_out_exmem,PC_out_memwb,inst_ID,Addr_out,Data_out,
-Data_out_WB,Rs1_val,Rs2_val,imm_ex,inst_idex,inst_exmem,inst_memwb;
+Data_out_WB,Rs1_val,Rs2_val,imm_ex,inst_idex,inst_exmem,inst_memwb,ALU_out_EX,wt_data_idex,wt_data_exmem,Rs1_out_ID,Rs2_out_ID;
 wire MemRW_Mem,MemRW_EX,reg_wen_mem,reg_wen_ex,
 reg_wen_wb,is_imm_ex,mem_wen_ex,mem_wen_mem,is_branch_ex,is_jal_ex,
 is_jal_mem,is_jalr_ex,is_jalr_mem,is_lui_ex;
+wire [1:0] ForwardA,ForwardB,MemtoReg_out_IDEX,MemtoReg_out_MemWB,MemtoReg_out_EXMem;
 wire [31:0] Reg0,Reg1,Reg2,Reg3,Reg4,Reg5,Reg6,Reg7,Reg8,Reg9,Reg10,Reg11,Reg12,Reg13,
 Reg14,Reg15,Reg16,Reg17,Reg18,Reg19,Reg20,Reg21,Reg22,Reg23,Reg24,Reg25,Reg26,Reg27,Reg28,Reg29,Reg30,Reg31;
 wire [4:0] rd_ex,rs1_ex,rs2_ex,rd_mem,rd_wb;
@@ -39,9 +40,10 @@ Reg16,Reg17,Reg18,Reg19,Reg20,Reg21,Reg22,Reg23,Reg24,Reg25,Reg26,Reg27,Reg28,Re
 .Rs1_val(Rs1_val),.Rs2_val(Rs2_val),.rd_ex(rd_ex),.rs1_ex(rs1_ex),.rs2_ex(rs2_ex),.rd_mem(rd_mem),
 .rd_wb(rd_wb),.imm_ex(imm_ex),.PC_out_idex(PC_out_idex),.PC_out_exmem(PC_out_exmem),
 .PC_out_memwb(PC_out_memwb),.reg_wen_ex(reg_wen_ex),.reg_wen_mem(reg_wen_mem),.reg_wen_wb(reg_wen_wb),
-.is_imm_ex(is_imm_ex),.mem_wen_ex(mem_wen_ex),.mem_wen_mem(mem_wen_mem),
+.is_imm_ex(is_imm_ex),.mem_wen_ex(mem_wen_ex),.mem_wen_mem(mem_wen_mem),.wt_data_idex(wt_data_idex),.wt_data_exmem(wt_data_exmem),
 .is_branch_ex(is_branch_ex),.is_jal_ex(is_jal_ex),.inst_idex(inst_idex),.inst_exmem(inst_exmem),
-.inst_memwb(inst_memwb),
+.inst_memwb(inst_memwb),.ForwardA(ForwardA),.ForwardB(ForwardB),.ALU_out_EX(ALU_out_EX),.MemtoReg_out_IDEX(MemtoReg_out_IDEX),
+.MemtoReg_out_MemWB(MemtoReg_out_MemWB),.MemtoReg_out_EXMem(MemtoReg_out_EXMem),.Rs1_out_ID(Rs1_out_ID),.Rs2_out_ID(Rs2_out_ID),
 .is_jal_mem(is_jal_mem),.is_jalr_ex(is_jalr_ex),.is_jalr_mem(is_jalr_mem),.is_lui_ex(is_lui_ex));
 
 /*
@@ -62,29 +64,29 @@ initial begin
     rst = 1;
     #100;
     rst = 0;
-    Inst_in = 32'h00500093;
+    Inst_in = 32'h00100093;
     #20;
-    Inst_in = 32'h00108133;
+    Inst_in = 32'h00102133;
     #20;
-    Inst_in = 32'h002081B3;
+    Inst_in = 32'h002101B3;
     #20;
-    Inst_in = 32'h0000A203;
+    Inst_in = 32'h00218233;
     #20;
-    Inst_in = 32'h002202B3;
+    Inst_in = 32'h003202B3;
     #20;
-    Inst_in = 32'h00000033;
+    Inst_in = 32'h00428333;
     #20;
-    Inst_in = 32'hFE0098E3;
+    Inst_in = 32'h005303B3;
     #20;
-    Inst_in = 32'h000000B3;
+    Inst_in = 32'h00638433;
     #20;
-    Inst_in = 32'h00000133;
+    Inst_in = 32'h007404B3;
     #20;
-    Inst_in = 32'h00700413;
+    Inst_in = 32'h00848533;
     #20;
-    Inst_in = 32'h04D00493;
+    Inst_in = 32'h009505B3;
     #20;
-    Inst_in = 32'h00000033;
+    Inst_in = 32'h00A58633;
     #20;
 end
 always begin

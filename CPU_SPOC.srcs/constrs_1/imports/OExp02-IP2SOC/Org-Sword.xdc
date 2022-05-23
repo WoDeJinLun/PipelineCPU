@@ -1,6 +1,5 @@
 #系统时钟
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets U1/Rs1_out_IDEX_reg]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets U1/Rs2_out_IDEX_reg]
+
 set_property IOSTANDARD LVCMOS18  [get_ports  clk_100mhz]
 set_property PACKAGE_PIN AC18     [get_ports  clk_100mhz]
 set_property IOSTANDARD LVCMOS18  [get_ports  RSTN]
